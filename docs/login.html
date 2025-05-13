@@ -22,9 +22,9 @@
     <section class="form-section">
         <div class="container">
             <h2>Đăng Nhập</h2>
-            <form action="#" method="POST" class="form">
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Mật Khẩu" required>
+            <form onsubmit="return login()" action="#" method="POST" class="form">
+                <input id="email" type="email" name="email" placeholder="Email" required>
+                <input id="pass" type="password" name="password" placeholder="Mật Khẩu" required>
                 <button type="submit" class="btn">Đăng Nhập</button>
             </form>
             <p>Bạn chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
@@ -36,5 +36,6 @@
             <p>© 2025 Simple Learning. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/login.js"></script>
 </body>
 </html>

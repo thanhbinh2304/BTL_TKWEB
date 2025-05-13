@@ -11,10 +11,22 @@
         <div class="container">
             <h1>Simple Learning</h1>
             <nav>
-                <a href="index.html">Trang Chủ</a>
-                <a href="courses.html">Khóa Học</a>
-                <a href="login.html">Đăng Nhập</a>
-                <a href="register.html">Đăng Ký</a>
+                <ul class="menu">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li class="has-submenu">
+                        <a href="courses.html">Khóa Học</a>
+                        <ul class="submenu">
+                            <li><a href="">Thiết kế Web</a></li>
+                            <li><a href="">Lập trình Python </a></li>
+                            <li><a href="">Lập trình Java</a></li>
+                            <li><a href="">Lập trình C++</a></li>
+                            <li><a href="">Lập trình C# .Net</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="login.html">Đăng Nhập</a></li>
+                    <li><a href="register.html">Đăng Ký</a></li>
+                    <li><a href="feedback.html">Phản Hồi</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -22,42 +34,48 @@
     <section class="courses">
         <div class="container">
             <h2>Tất Cả Khóa Học</h2>
-            <div class="course-grid">
+            <div class="course-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 0 20px;">
                 <div class="course-card">
-                    <img src="img/html-css.webp" alt="HTML CSS">
+                    <img src="img/html.png" alt="HTML CSS">
                     <h3>HTML & CSS Cơ Bản</h3>
                     <p>Học xây dựng giao diện website từ cơ bản.</p>
-                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                    <a href="htmlcss-detail.html" class="btn">Xem Chi Tiết</a>
                 </div>
                 <div class="course-card">
-                    <img src="img/Javascript.jpg" alt="JavaScript">
+                    <img src="img/Javascript.png" alt="JavaScript">
                     <h3>Lập Trình JavaScript</h3>
                     <p>Viết mã JavaScript chuyên nghiệp từ căn bản.</p>
-                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                    <a href="javascript-detail.html" class="btn">Xem Chi Tiết</a>
                 </div>
                 <div class="course-card">
-                    <img src="img/python.jpg" alt="Python">
-                    <h3>Lập Trình Python</h3>
+                    <img src="img/pythonbasic.png" alt="Python">
+                    <h3>Lập Trình Python cơ bản</h3>
                     <p>Python cho người mới bắt đầu, thực hành dự án thực tế.</p>
-                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                    <a href="python-detail.html" class="btn">Xem Chi Tiết</a>
                 </div>
                 <div class="course-card">
                     <img src="img/java.jpg" alt="Java">
                     <h3>Lập Trình Java</h3>
                     <p>Học Java từ cơ bản tới OOP và Spring Boot.</p>
-                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                    <a href="java-detail.html" class="btn">Xem Chi Tiết</a>
                 </div>
                 <div class="course-card">
                     <img src="img/react.jpg" alt="ReactJS">
                     <h3>ReactJS Cho Người Mới</h3>
                     <p>Build website hiện đại với ReactJS và Redux.</p>
-                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                    <a href="reactJS-detail.html" class="btn">Xem Chi Tiết</a>
                 </div>
                 <div class="course-card">
                     <img src="img/sql.jpg" alt="SQL">
                     <h3>Quản Trị Cơ Sở Dữ Liệu</h3>
                     <p>SQL và quản lý hệ thống cơ sở dữ liệu bài bản.</p>
-                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                    <a href="sql-detail.html" class="btn">Xem Chi Tiết</a>
+                </div>
+                <div class="course-card">
+                    <img src="img/C#.jpg" alt="C#">
+                    <h3>Lập Trình C# Căn Bản</h3>
+                    <p>Khóa học lập trình cho người mới bắt đầu.</p>
+                    <a href="C#-detail.html" class="btn">Xem Chi Tiết</a>
                 </div>
                 <!-- Thêm khóa học khác nếu muốn -->
             </div>
