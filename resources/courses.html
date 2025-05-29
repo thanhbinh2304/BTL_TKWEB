@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Learning - Khóa Học</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Simple Learning</h1>
+            <nav>
+                <a href="index.html">Trang Chủ</a>
+                <a href="courses.html">Khóa Học</a>
+                <a href="login.html">Đăng Nhập</a>
+                <a href="register.html">Đăng Ký</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="courses">
+        <div class="container">
+            <h2>Tất Cả Khóa Học</h2>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm khóa học..." style="padding: 10px; width: 100%; max-width: 400px; margin: 0 auto; display: block; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ccc;">
+
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="img/html-css.jpg" alt="HTML CSS">
+                    <h3>HTML & CSS Cơ Bản</h3>
+                    <p>Học xây dựng giao diện website từ cơ bản.</p>
+                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                </div>
+                <div class="course-card">
+                    <img src="img/javascript.jpg" alt="JavaScript">
+                    <h3>Lập Trình JavaScript</h3>
+                    <p>Viết mã JavaScript chuyên nghiệp từ căn bản.</p>
+                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                </div>
+                <div class="course-card">
+                    <img src="img/python.jpg" alt="Python">
+                    <h3>Lập Trình Python</h3>
+                    <p>Python cho người mới bắt đầu, thực hành dự án thực tế.</p>
+                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                </div>
+                <div class="course-card">
+                    <img src="img/java.jpg" alt="Java">
+                    <h3>Lập Trình Java</h3>
+                    <p>Học Java từ cơ bản tới OOP và Spring Boot.</p>
+                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                </div>
+                <div class="course-card">
+                    <img src="img/react.jpg" alt="ReactJS">
+                    <h3>ReactJS Cho Người Mới</h3>
+                    <p>Build website hiện đại với ReactJS và Redux.</p>
+                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                </div>
+                <div class="course-card">
+                    <img src="img/sql.jpg" alt="SQL">
+                    <h3>Quản Trị Cơ Sở Dữ Liệu</h3>
+                    <p>SQL và quản lý hệ thống cơ sở dữ liệu bài bản.</p>
+                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                </div>
+                <!-- Thêm khóa học khác nếu muốn -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Simple Learning. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="search.js"></script>
+
+</body>
+</html>
