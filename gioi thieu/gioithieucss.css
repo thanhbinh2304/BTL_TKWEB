@@ -1,0 +1,339 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+/* Container chung */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #4ab8ff;
+}
+
+nav ul.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav ul.menu li {
+    position: relative;
+}
+
+nav ul.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul.menu a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Submenu */
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #1f1f1f;
+    top: 38px;
+    left: 0;
+    padding: 0;
+    list-style: none;
+    min-width: 150px;
+    z-index: 99;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+    background-color: #333;
+}
+
+/* Main content */
+.main-content {
+    background-color: #1f1f1f;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Giới thiệu */
+.intro {
+    margin-bottom: 40px;
+}
+
+.intro-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.intro-image {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(74, 184, 255, 0.4);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.intro-image img:hover {
+    transform: scale(1.05);
+}
+
+.intro-text {
+    flex: 2 1 300px;
+    text-align: left;
+}
+
+.intro-text h2 {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #4ab8ff;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.intro-text p {
+    margin-bottom: 10px;
+}
+
+/* Ảnh lớn bên dưới giới thiệu */
+.intro-large-image {
+    margin-top: 40px;
+    width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(74, 184, 255, 0.5);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.intro-large-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.intro-large-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Testimonials */
+.testimonials h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4ab8ff;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-left: 5px solid #4ab8ff;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 280px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.testimonial-card h4 {
+    text-align: right;
+    color: #ccc;
+}
+
+/* Địa chỉ */
+.address {
+    margin-top: 40px;
+}
+
+.address h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #4ab8ff;
+}
+
+.map-frame {
+    width: 100%;
+    height: 300px;
+    border: none;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* Vision & Mission */
+.vision-mission {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.vision, .mission {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.vision h3, .mission h3 {
+    color: #4ab8ff;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+.vision p, .mission p {
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* Khung ảnh Vision & Mission */
+.vision-images, .mission-images {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    overflow: hidden;
+    margin: 15px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(74, 184, 255, 0.4);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.vision-images img, .mission-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.vision-images:hover,
+.mission-images:hover {
+    transform: scale(1.05);
+}
+
+.vision-images img:hover,
+.mission-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text {
+        text-align: center;
+    }
+
+    nav ul.menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .testimonial-cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .vision-mission {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .vision-images, .mission-images {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .vision-images img, .mission-images img {
+        height: auto;
+    }
+}
