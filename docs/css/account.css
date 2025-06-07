@@ -1,0 +1,277 @@
+/*
+ * account.css
+ * Kế thừa style.css và bổ sung style cho phần profile/account
+ */
+@import url("style.css");
+
+/* Đảm bảo header cố định không che nội dung */
+.main-container {
+    padding-top: 90px;
+    min-height: 70vh;
+    background: #f4f4f4;
+}
+
+/* Profile Section Layout */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 40px auto 0 auto;
+    max-width: 1100px;
+}
+
+/* Profile Card */
+.profile-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px 28px;
+    min-width: 270px;
+    max-width: 320px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.avatar {
+    width: 90px;
+    height: 90px;
+    background: #eee;
+    border-radius: 50%;
+    margin: 0 auto 18px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: #888;
+    overflow: hidden;
+    border: 2px solid #ddd;
+}
+.profile-card h3 {
+    margin: 10px 0 4px 0;
+    font-size: 22px;
+    color: #222;
+}
+.profile-card p {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+.upload-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 8px;
+    transition: background 0.3s;
+}
+.upload-btn:hover {
+    background: #555;
+}
+
+/* Form Section */
+.form-section {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px 36px;
+    flex: 1;
+    min-width: 320px;
+    max-width: 600px;
+}
+#profileForm label {
+    font-weight: 600;
+    color: #222;
+}
+#profileForm input, #profileForm textarea, #profileForm select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    background: #fafafa;
+    transition: border 0.2s;
+}
+#profileForm input:focus, #profileForm textarea:focus, #profileForm select:focus {
+    border: 1.5px solid #333;
+    outline: none;
+}
+.form-row {
+    display: flex;
+    gap: 18px;
+}
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.btn-group {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+.btn-primary {
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 22px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-primary:hover {
+    background: #555;
+}
+.btn-secondary {
+    background: #eee;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 22px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-secondary:hover {
+    background: #ddd;
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    background: #e6f9ed;
+    color: #1a7f37;
+    border: 1px solid #b7ebc6;
+    border-radius: 5px;
+    padding: 12px 18px;
+    margin: 0 auto 18px auto;
+    max-width: 500px;
+    text-align: center;
+    font-size: 16px;
+    align-items: center;
+    gap: 8px;
+}
+.success-message i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Page Title */
+.page-title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.page-title h1 {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 6px;
+}
+.page-title p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* CSS cho account icon và submenu tài khoản */
+.account-icon-li a {
+  padding: 0 8px;
+  border-radius: 50%;
+  transition: background 0.2s, box-shadow 0.2s;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+.account-icon-li a:hover, .account-icon-li a:focus {
+  background: #232323;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.account-icon {
+  color: #fff;
+  transition: color 0.2s, transform 0.2s;
+}
+.account-icon-li a:hover .account-icon, .account-icon-li a:focus .account-icon {
+  color: #00bcd4;
+  transform: scale(1.12) rotate(-6deg);
+}
+@media (max-width: 900px) {
+  .account-icon-li a {
+    height: 56px;
+  }
+}
+.account-icon-li.has-submenu {
+  position: relative;
+}
+.account-icon-li .account-submenu {
+  display: none;
+  position: absolute;
+  background-color: #444; /* Đồng bộ với .submenu */
+  min-width: 160px; /* Đồng bộ với .submenu */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Đồng bộ với .submenu */
+  z-index: 1;
+  list-style: none;
+  right: 0;
+  top: 100%;
+  border-radius: 8px !important; /* Sửa: ép bo góc đều, không bị oval */
+  padding: 0;
+  margin-top: 8px;
+}
+.account-icon-li.open .account-submenu {
+  display: block;
+}
+.account-submenu li a {
+  color: white;
+  padding: 0.8rem 1rem;
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  transition: background 0.18s, color 0.18s;
+  border-radius: 0 !important; /* Sửa: không bo tròn từng item, giữ hình chữ nhật */
+}
+.account-submenu li a:hover, .account-submenu li a:focus {
+  background-color: #555; /* Đồng bộ với .submenu li a:hover */
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .account-icon-li .account-submenu {
+    position: static;
+    min-width: 120px;
+    margin-top: 0;
+    box-shadow: none;
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .footer-container {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+    }
+}
+@media (max-width: 600px) {
+    .main-container {
+        padding-top: 70px;
+    }
+    .profile-card, .form-section {
+        padding: 18px 8px;
+        min-width: unset;
+        max-width: 100%;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+

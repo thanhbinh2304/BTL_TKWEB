@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tài khoản</title>
+        <link rel="stylesheet" href="css/account.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="container">
+            <h1>Simple Learning</h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li class="has-submenu">
+                        <a href="courses.html">Khóa Học</a>
+                        <ul class="submenu">
+                            <li><a href="">Thiết kế Web</a></li>
+                            <li><a href="">Lập trình Python</a></li>
+                            <li><a href="">Lập trình Java</a></li>
+                            <li><a href="">Lập trình C++</a></li>
+                            <li><a href="">Lập trình C# .Net</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="feedback.html">Phản Hồi</a></li>
+                    <li><a href="account.html">Tài Khoản</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+
+
+         <main class="main-container">
+        <div class="page-title">
+            <h1>Quản lý thông tin cá nhân</h1>
+            <p>Cập nhật và quản lý thông tin hồ sơ của bạn</p>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i> Thông tin đã được cập nhật thành công!
+        </div>
+
+        <div class="profile-section">
+            <!-- Profile Card -->
+            <div class="profile-card">
+                <div class="avatar" id="avatarDisplay">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 id="displayName">Lê Thành Bình</h3>
+                <p id="displayEmail">lethanhbinh8@example.com</p>
+                <button class="upload-btn" onclick="document.getElementById('avatarUpload').click()">
+                    <i class="fas fa-camera"></i> Thay đổi ảnh
+                </button>
+                <input type="file" id="avatarUpload" accept="image/*" style="display: none;" onchange="handleAvatarUpload(event)">
+            </div>
+
+            <!-- Form -->
+            <div class="form-section">
+                <form id="profileForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Họ và tên đệm *</label>
+                            <input type="text" id="firstName" name="firstName" value="Lê Thành" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Tên *</label>
+                            <input type="text" id="lastName" name="lastName" value="Bình" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" value="lethanhbinh8@example.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" placeholder="0123456789">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday">Ngày sinh</label>
+                            <input type="date" id="birthday" name="birthday">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gender">Giới tính</label>
+                            <select id="gender" name="gender">
+                                <option value="">Chọn giới tính</option>
+                                <option value="male">Nam</option>
+                                <option value="female">Nữ</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="occupation">Nghề nghiệp</label>
+                            <input type="text" id="occupation" name="occupation" placeholder="Sinh viên, Lập trình viên, ...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Địa chỉ</label>
+                        <textarea id="address" name="address" rows="3" placeholder="Nhập địa chỉ của bạn"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Giới thiệu bản thân</label>
+                        <textarea id="bio" name="bio" rows="4" placeholder="Viết vài dòng giới thiệu về bản thân..."></textarea>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Lưu thay đổi
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">
+                            <i class="fas fa-undo"></i> Hủy bỏ
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+     <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Về chúng tôi</h3>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Đội ngũ</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Khóa học</h3>
+                <ul>
+                    <li><a href="#">Frontend</a></li>
+                    <li><a href="#">Backend</a></li>
+                    <li><a href="#">Fullstack</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hỗ trợ</h3>
+                <ul>
+                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết nối với chúng tôi</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fullstack Education. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+    </body>
+</html>

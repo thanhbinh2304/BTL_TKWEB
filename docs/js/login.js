@@ -24,13 +24,13 @@ function register() {
             return false;
         }
     }
-
-    const newUser = {email, password, username};
+    // Lấy ngôn ngữ hiện tại từ localStorage (nếu có)
+    const language = localStorage.getItem('site_language') || 'vi';
+    const newUser = {email, password, username, language};
     users.push(newUser);
     saveUsers(users);
     // Save the current user to localStorage
     localStorage.setItem("user", JSON.stringify(newUser));
-    
     alert("Đăng ký thành công!");
     window.location.href = "login.html";    
     return false;
@@ -38,7 +38,6 @@ function register() {
 function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("pass").value;
-    
     const users = getUsers();
     const user = users.find(user => user.email === email);
     if (!user) {
@@ -49,7 +48,16 @@ function login() {
         alert("Mật khẩu không đúng.");
         return false;
     }
-    
+    // Nếu user chưa có thuộc tính language thì thêm vào (ưu tiên localStorage.site_language)
+    if (!user.language) {
+        user.language = localStorage.getItem('site_language') || 'vi';
+        // Cập nhật lại users trong localStorage
+        const idx = users.findIndex(u => u.email === user.email);
+        if (idx !== -1) {
+            users[idx] = user;
+            saveUsers(users);
+        }
+    }
     // Save the logged-in user to localStorage
     localStorage.setItem("user", JSON.stringify(user));
     alert("Đăng nhập thành công!");
