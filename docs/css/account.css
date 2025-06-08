@@ -177,6 +177,40 @@
     font-size: 16px;
 }
 
+
+.logo {
+  height: 96px;
+  width: auto;
+  max-width: 220px;
+  min-width: 64px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: #fff;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 4px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+@media (max-width: 900px) {
+  .logo {
+    height: 64px;
+    min-width: 48px;
+    border-radius: 12px;
+    padding: 2px;
+  }
+}
+@media (max-width: 600px) {
+  .logo {
+    height: 48px;
+    min-width: 36px;
+    border-radius: 8px;
+    padding: 1px;
+  }
+}
+.logo-link:hover .logo, .logo-link:focus .logo {
+  box-shadow: 0 4px 20px rgba(0,188,212,0.18);
+  transform: scale(1.03) rotate(-2deg);
+}
 /* CSS cho account icon và submenu tài khoản */
 .account-icon-li a {
   padding: 0 8px;
@@ -231,7 +265,7 @@
   text-align: left;
   font-size: 1rem;
   transition: background 0.18s, color 0.18s;
-  border-radius: 0 !important; /* Sửa: không bo tròn từng item, giữ hình chữ nhật */
+  border-radius: 8px !important; /* Sửa: không bo tròn từng item, giữ hình chữ nhật */
 }
 .account-submenu li a:hover, .account-submenu li a:focus {
   background-color: #555; /* Đồng bộ với .submenu li a:hover */

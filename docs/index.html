@@ -9,12 +9,13 @@
     
 </head>
 <body>
-    <header class="header">
-  <div class="header-inner">
-    <a href="index.html" class="logo-link">
-      <img src="img/logo.jpg" alt="Logo" class="logo" style="height:96px;width:auto;max-width:220px;min-width:64px;object-fit:contain;border-radius:18px;background:#fff;border:3px solid #fff;box-shadow:0 2px 12px rgba(0,0,0,0.10);padding:4px;">
-    </a>
-    <nav>
+    <header>
+        <div class="container">
+            <div class="logo-title-group">
+                <img src="img//logo.jpg" alt="knowledge-sharing">
+                <h1>Simple Learning</h1>
+            </div>
+            <nav>
                 <button class="menu-toggle" id="menuToggle">
                     <span class="material-icons">menu</span>
                 </button>
@@ -38,16 +39,16 @@
                     <li class="has-submenu">
                         <a href="courses.html">Khóa Học</a>
                         <ul class="submenu">
-                            <li><a href="">Thiết kế Web</a></li>
-                            <li><a href="">Lập trình Python </a></li>
-                            <li><a href="">Lập trình Java</a></li>
-                            <li><a href="">Cơ sở dữ liệu</a></li>
-                            <li><a href="">Lập trình C# .Net</a></li>
+                            <li><a href="login.html">Thiết kế Web</a></li>
+                            <li><a href="login.html">Lập trình Python </a></li>
+                            <li><a href="login.html">Lập trình Java</a></li>
+                            <li><a href="login.html">Cơ sở dữ liệu</a></li>
+                            <li><a href="login.html">Lập trình C# .Net</a></li>
                         </ul>
                     </li>
                     
                     <li><a href="login.html">Đăng Nhập</a></li>
-                    <li><a href="feedback.html">Phản Hồi</a></li>
+                    <li><a href="login.html">Phản Hồi</a></li>
                 </ul>
             </nav>
   </div>
@@ -72,7 +73,7 @@
                 <p class="hero-modern-text">
                     Learn, share, and develop your skills with the modern programming community.
                 </p>
-                <a href="courses.html" class="btn hero-modern-btn">
+                <a href="login.html" class="btn hero-modern-btn">
                     <span>Find courses</span>
                     <span class="material-icons" style="font-size:20px;vertical-align:middle;">arrow_forward</span>
                 </a>
@@ -103,19 +104,19 @@
                     <img src="img/html.png" alt="HTML CSS">
                     <h3>HTML & CSS Cơ Bản</h3>
                     <p>Học cách xây dựng trang web đẹp mắt bằng HTML và CSS.</p>
-                    <a href="htmlcss-detail.html" class="btn">Xem Chi Tiết</a>
+                    <a href="login.html" class="btn">Xem Chi Tiết</a>
                 </div>
                 <div class="course-card">
                     <img src="img/Javascript.png" alt="JavaScript">
                     <h3>Lập Trình JavaScript</h3>
                     <p>Thành thạo JavaScript - ngôn ngữ không thể thiếu cho Web Developer.</p>
-                    <a href="course-detail.html" class="btn">Xem Chi Tiết</a>
+                    <a href="login.html" class="btn">Xem Chi Tiết</a>
                 </div>
                 <div class="course-card">
                     <img src="img/pythonbasic.png" alt="Python">
                     <h3>Lập Trình Python Cơ Bản</h3>
                     <p>Khám phá thế giới lập trình với Python - ngôn ngữ dễ học nhất.</p>
-                    <a href="python-detail.html" class="btn">Xem Chi Tiết</a>
+                    <a href="login.html" class="btn">Xem Chi Tiết</a>
                 </div>
                 <!-- Thêm nhiều course-card khác nếu muốn -->
             </div>
@@ -167,6 +168,7 @@
         <span class="material-icons">arrow_upward</span>
     </button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="js/lang-switch.js"></script>
     <script >
         function setLanguage(lang) {
         localStorage.setItem('site_language', lang);
@@ -190,7 +192,7 @@
             heroP.textContent = lang === 'vi' ? 'Tham gia ngay hôm nay để trở thành lập trình viên chuyên nghiệp!' : 'Join today to become a professional developer!';
         }
         // Courses section
-        var coursesTitle = document.querySelector('.courses .container h2');
+        var coursesTitle = document.querySelector('.courses .container h2, .courses-title-highlight');
         if(coursesTitle) coursesTitle.textContent = lang === 'vi' ? 'Khóa học nổi bật' : 'Featured Courses';
         var cards = document.querySelectorAll('.course-card');
         var courseTitles = [
@@ -208,9 +210,21 @@
             var h3 = card.querySelector('h3');
             var p = card.querySelector('p');
             var a = card.querySelector('a');
-            if(h3) h3.textContent = courseTitles[i];
-            if(p) p.textContent = courseDescs[i];
+            if(h3 && courseTitles[i]) h3.textContent = courseTitles[i];
+            if(p && courseDescs[i]) p.textContent = courseDescs[i];
             if(a) a.textContent = courseBtns;
+        });
+        // Menu (header)
+        var menuLinks = document.querySelectorAll('.menu > li > a');
+        var menuTextVi = ['Trang Chủ', 'Giới Thiệu', 'Khóa Học', 'Đăng Nhập', 'Phản Hồi'];
+        var menuTextEn = ['Home', 'About', 'Courses', 'Login', 'Feedback'];
+        var menuIdx = 0;
+        menuLinks.forEach(function(link) {
+            var li = link.parentElement;
+            if(li && !li.classList.contains('language-switch') && menuIdx < menuTextVi.length) {
+                link.textContent = lang === 'vi' ? menuTextVi[menuIdx] : menuTextEn[menuIdx];
+                menuIdx++;
+            }
         });
         // Footer
         var footerSections = document.querySelectorAll('.footer-section h3');
@@ -220,22 +234,58 @@
             footerSections[2].textContent = lang === 'vi' ? 'Hỗ trợ' : 'Support';
             footerSections[3].textContent = lang === 'vi' ? 'Kết nối với chúng tôi' : 'Connect with us';
         }
+        // Footer links
+        var footerLinks = [
+            // Về chúng tôi
+            [
+                lang === 'vi' ? 'Giới thiệu' : 'About',
+                lang === 'vi' ? 'Đội ngũ' : 'Team',
+                lang === 'vi' ? 'Tuyển dụng' : 'Careers',
+                lang === 'vi' ? 'Liên hệ' : 'Contact'
+            ],
+            // Khóa học
+            [
+                lang === 'vi' ? 'Frontend' : 'Frontend',
+                lang === 'vi' ? 'Backend' : 'Backend',
+                lang === 'vi' ? 'Database' : 'Database'
+            ],
+            // Hỗ trợ
+            [
+                lang === 'vi' ? 'Trung tâm trợ giúp' : 'Help Center',
+                lang === 'vi' ? 'Câu hỏi thường gặp' : 'FAQ',
+                lang === 'vi' ? 'Chính sách bảo mật' : 'Privacy Policy',
+                lang === 'vi' ? 'Điều khoản sử dụng' : 'Terms of Use'
+            ],
+            // Kết nối với chúng tôi
+            [
+                lang === 'vi' ? 'Facebook' : 'Facebook',
+                lang === 'vi' ? 'YouTube' : 'YouTube',
+                lang === 'vi' ? 'GitHub' : 'GitHub'
+            ]
+        ];
+        var footerSectionUls = document.querySelectorAll('.footer-section ul');
+        footerSectionUls.forEach(function(ul, i) {
+            var lis = ul.querySelectorAll('li');
+            lis.forEach(function(li, j) {
+                var a = li.querySelector('a');
+                if(a && footerLinks[i] && footerLinks[i][j]) {
+                    var icon = a.querySelector('img, div');
+                    if(icon) {
+                        var nodes = Array.from(a.childNodes).filter(function(n) { return n.nodeType === 3; });
+                        if(nodes.length > 0) nodes[0].textContent = ' ' + footerLinks[i][j];
+                        else a.append(' ' + footerLinks[i][j]);
+                    } else {
+                        a.textContent = footerLinks[i][j];
+                    }
+                }
+            });
+        });
         var footerBottom = document.querySelector('.footer-bottom p');
         if(footerBottom) footerBottom.textContent = lang === 'vi' ? '© 2025 Fullstack Education. Tất cả quyền được bảo lưu.' : '© 2025 Fullstack Education. All rights reserved.';
-        // Menu
-        var menuLinks = document.querySelectorAll('.menu > li > a');
-        if(menuLinks.length >= 7) {
-            menuLinks[1].textContent = lang === 'vi' ? 'Trang Chủ' : 'Home';
-            menuLinks[2].textContent = lang === 'vi' ? 'Giới Thiệu' : 'About';
-            menuLinks[3].textContent = lang === 'vi' ? 'Khóa Học' : 'Courses';
-            menuLinks[4].textContent = lang === 'vi' ? 'Đăng Nhập' : 'Login';
-            menuLinks[5].textContent = lang === 'vi' ? 'Đăng Ký' : 'Register';
-            menuLinks[6].textContent = lang === 'vi' ? 'Phản Hồi' : 'Feedback';
-        }
         // submenu Khóa Học (không ảnh hưởng submenu ngôn ngữ)
         var allSubmenus = document.querySelectorAll('.menu > li.has-submenu > ul.submenu');
-        if (allSubmenus.length > 1) {
-            var khoaHocSubmenu = allSubmenus[1];
+        if (allSubmenus.length > 0) {
+            var khoaHocSubmenu = allSubmenus[0];
             var khoaHocLinks = khoaHocSubmenu.querySelectorAll('li > a');
             if (khoaHocLinks.length >= 5) {
                 khoaHocLinks[0].textContent = lang === 'vi' ? 'Thiết kế Web' : 'Web Design';

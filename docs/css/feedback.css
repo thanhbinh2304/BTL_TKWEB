@@ -1,0 +1,81 @@
+
+.feedback-form-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px #0001;
+    padding: 32px 24px;
+    margin: 0 auto;
+}
+.feedback-form-wrapper h2 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    color: #1976d2;
+    text-align: center;
+}
+#feedbackForm .form-group {
+    margin-bottom: 18px;
+}
+#feedbackForm label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #222;
+}
+#feedbackForm input[type="text"],
+#feedbackForm input[type="email"],
+#feedbackForm textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border-color 0.2s;
+    resize: none;
+}
+#feedbackForm input[type="text"]:focus,
+#feedbackForm input[type="email"]:focus,
+#feedbackForm textarea:focus {
+    border-color: #1976d2;
+    outline: none;
+    background: #fff;
+}
+#feedbackForm button.btn-primary {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+#feedbackForm button.btn-primary:hover {
+    background: #1256a3;
+}
+#feedbackForm .fa-paper-plane {
+    margin-right: 6px;
+}
+#feedbackSuccess {
+    color: #2e7d32;
+    font-weight: 500;
+    margin-top: 12px;
+    text-align: center;
+    display: none;
+}
+@media (max-width: 700px) {
+    .contact-feedback-section {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .feedback-form-wrapper {
+        padding: 20px 8px;
+    }
+}

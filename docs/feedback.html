@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ & Góp ý - Simple Learning</title>
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/feedback.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Header giống index2 -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="container">
+                <div class="logo-title-group">
+                    <img src="img/logo.jpg" alt="knowledge-sharing">
+                    <h1>Simple Learning</h1>
+                </div>
+                <nav>
+                    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Mở menu">
+                        <span class="material-icons">menu</span>
+                    </button>
+                    <ul class="menu" id="menu">
+                        <li style="list-style:none;padding:0;margin:0;">
+                            <button class="menu-close" id="menuClose" type="button" aria-label="Đóng menu">
+                                <span class="material-icons">close</span>
+                            </button>
+                        </li>
+                        <li class="has-submenu language-switch">
+                            <a href="#" style="display:flex;align-items:center;">
+                                <img src="https://flagcdn.com/24x18/vn.png" alt="VN" style="width:24px;height:18px;margin-right:4px;"> 
+                                <span id="lang-label">Tiếng Việt</span>
+                                <span class="material-icons" style="font-size:18px;margin-left:2px;">expand_more</span>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="#" onclick="setLanguage('vi');return false;"><img src="https://flagcdn.com/24x18/vn.png" alt="VN" style="width:24px;height:18px;margin-right:6px;">Tiếng Việt</a></li>
+                                <li><a href="#" onclick="setLanguage('en');return false;"><img src="https://flagcdn.com/24x18/gb.png" alt="EN" style="width:24px;height:18px;margin-right:6px;">English</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index2.html">Trang Chủ</a></li>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li class="has-submenu">
+                            <a href="courses.html">Khóa Học</a>
+                            <ul class="submenu">
+                                <li><a href="">Thiết kế Web</a></li>
+                                <li><a href="">Lập trình Python </a></li>
+                                <li><a href="">Lập trình Java</a></li>
+                                <li><a href="">Cơ sở dữ liệu</a></li>
+                                <li><a href="">Lập trình C# .Net</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="feedback.html">Phản Hồi</a></li>
+                        <li class="account-icon-li has-submenu">
+                            <a href="account.html" title="Tài khoản" aria-label="Tài khoản" style="display:flex;align-items:center;gap:4px;">
+                                <span class="material-icons account-icon" style="font-size:26px;vertical-align:middle;">account_circle</span>
+                            </a>
+                            <ul class="submenu account-submenu">
+                                <li><a href="account.html">Tài khoản</a></li>
+                                <li><a href="#" id="logoutBtn">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="header-spacer"></div>
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main-container">
+        <div class="page-title">
+            <h1>Liên hệ & Góp ý</h1>
+            <p>Chúng tôi luôn lắng nghe ý kiến của bạn!</p>
+        </div>
+        <div class="contact-feedback-section" style="max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;justify-content:center;">
+            <div class="contact-info" style="flex:1 1 320px;min-width:280px;">
+                <h2>Thông tin liên hệ</h2>
+                <ul style="list-style:none;padding:0;margin:0;">
+                    <li style="margin-bottom:12px;"><span class="material-icons" style="vertical-align:middle;color:#1976d2;">location_on</span> Địa chỉ: 12 Chùa Bộc, Đống Đa, Hà Nội</li>
+                    <li style="margin-bottom:12px;"><span class="material-icons" style="vertical-align:middle;color:#1976d2;">email</span> Email: <a href="mailto:simplelearning@edu.vn">simplelearning@edu.vn</a></li>
+                    <li style="margin-bottom:12px;"><span class="material-icons" style="vertical-align:middle;color:#1976d2;">phone</span> Điện thoại: <a href="tel:0123456789">0123 456 789</a></li>
+                    <li style="margin-bottom:12px;"><span class="material-icons" style="vertical-align:middle;color:#1976d2;">public</span> Website: <a href="https://simplelearning.vn">simplelearning.vn</a></li>
+                </ul>
+                <div style="margin-top:18px;">
+                    <h3>Kết nối với chúng tôi</h3>
+                    <a href="#" style="margin-right:10px;"><img src="img/facebook-icon.svg" alt="Facebook" style="height:28px;width:28px;vertical-align:middle;"></a>
+                    <a href="#" style="margin-right:10px;"><img src="img/youtube-icon.svg" alt="YouTube" style="height:28px;width:28px;vertical-align:middle;"></a>
+                    <a href="#"><img src="img/icons8-github-50.png" alt="GitHub" style="height:28px;width:28px;vertical-align:middle;"></a>
+                </div>
+            </div>
+            <div class="feedback-form-wrapper" style="flex:1 1 340px;min-width:300px;background:#fff;border-radius:12px;box-shadow:0 2px 12px #0001;padding:32px 24px;">
+                <h2 style="margin-bottom:18px;">Gửi góp ý/Phản hồi</h2>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Họ và tên *</label>
+                        <input type="text" id="name" name="name" required placeholder="Nhập họ và tên">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="Nhập email">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Chủ đề</label>
+                        <input type="text" id="subject" name="subject" placeholder="Chủ đề góp ý">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nội dung *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Nhập nội dung góp ý hoặc câu hỏi của bạn..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;margin-top:10px;">
+                        <i class="fas fa-paper-plane"></i> Gửi góp ý
+                    </button>
+                    <div id="feedbackSuccess" style="display:none;color:green;margin-top:12px;"><i class="fas fa-check-circle"></i> Cảm ơn bạn đã gửi góp ý!</div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- Footer giống index2 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Về chúng tôi</h3>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Đội ngũ</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Khóa học</h3>
+                <ul>
+                    <li><a href="#">Frontend</a></li>
+                    <li><a href="#">Backend</a></li>
+                    <li><a href="#">Database</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hỗ trợ</h3>
+                <ul>
+                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết nối với chúng tôi</h3>
+                <ul>
+                    <li><a href="#"><img src="img/facebook-icon.svg" alt="Facebook" style="height:20px;width:20px;vertical-align:middle;margin-right:6px;"> Facebook</a></li>
+                    <li><a href="#"><img src="img/youtube-icon.svg" alt="YouTube" style="height:20px;width:20px;vertical-align:middle;margin-right:6px;"> YouTube</a></li>
+                    <li><a href="#"><div id="github-lottie" style="display:inline-block;height:20px;width:20px;vertical-align:middle;margin-right:6px;"></div> GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fullstack Education. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+    <button id="backToTop" title="Lên đầu trang" aria-label="Lên đầu trang" type="button">
+        <span class="material-icons">arrow_upward</span>
+    </button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="js/lang-switch.js"></script>
+    <script src="js/account.js"></script>
+   
+    <button id="backToTop" title="Lên đầu trang" aria-label="Lên đầu trang" type="button">
+        <span class="material-icons">arrow_upward</span>
+    </button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script>
+         function setLanguage(lang) {
+        localStorage.setItem('site_language', lang);
+        // Đổi label và icon trên menu
+        var langLabel = document.getElementById('lang-label');
+        var langIcon = document.querySelector('.language-switch > a > img');
+        if(lang === 'vi') {
+            langLabel.textContent = 'Tiếng Việt';
+            langIcon.src = 'https://flagcdn.com/24x18/vn.png';
+            langIcon.alt = 'VN';
+        } else {
+            langLabel.textContent = 'English';
+            langIcon.src = 'https://flagcdn.com/24x18/gb.png';
+            langIcon.alt = 'EN';
+        }
+        // Footer
+        var footerSections = document.querySelectorAll('.footer-section h3');
+        if(footerSections.length >= 4) {
+            footerSections[0].textContent = lang === 'vi' ? 'Về chúng tôi' : 'About Us';
+            footerSections[1].textContent = lang === 'vi' ? 'Khóa học' : 'Courses';
+            footerSections[2].textContent = lang === 'vi' ? 'Hỗ trợ' : 'Support';
+            footerSections[3].textContent = lang === 'vi' ? 'Kết nối với chúng tôi' : 'Connect with us';
+        }
+        // Footer links
+        var footerLinks = [
+            // Về chúng tôi/About Us
+            [
+                lang === 'vi' ? 'Giới thiệu' : 'About',
+                lang === 'vi' ? 'Đội ngũ' : 'Team',
+                lang === 'vi' ? 'Tuyển dụng' : 'Careers',
+                lang === 'vi' ? 'Liên hệ' : 'Contact'
+            ],
+            // Khóa học/Courses
+            [
+                lang === 'vi' ? 'Frontend' : 'Frontend',
+                lang === 'vi' ? 'Backend' : 'Backend',
+                lang === 'vi' ? 'Database' : 'Database'
+            ],
+            // Hỗ trợ/Support
+            [
+                lang === 'vi' ? 'Trung tâm trợ giúp' : 'Help Center',
+                lang === 'vi' ? 'Câu hỏi thường gặp' : 'FAQ',
+                lang === 'vi' ? 'Chính sách bảo mật' : 'Privacy Policy',
+                lang === 'vi' ? 'Điều khoản sử dụng' : 'Terms of Use'
+            ],
+            // Kết nối với chúng tôi/Connect with us
+            [
+                lang === 'vi' ? 'Facebook' : 'Facebook',
+                lang === 'vi' ? 'YouTube' : 'YouTube',
+                lang === 'vi' ? 'GitHub' : 'GitHub'
+            ]
+        ];
+        var footerSectionsUl = document.querySelectorAll('.footer-section ul');
+        footerSectionsUl.forEach(function(ul, i) {
+            var lis = ul.querySelectorAll('li');
+            lis.forEach(function(li, j) {
+                var a = li.querySelector('a');
+                if(a && footerLinks[i] && footerLinks[i][j]) {
+                    // Giữ nguyên icon nếu có
+                    var icon = a.querySelector('img, div');
+                    if(icon) {
+                        var textNodes = Array.from(a.childNodes).filter(function(n){return n.nodeType===3;});
+                        if(textNodes.length > 0) textNodes[0].textContent = ' ' + footerLinks[i][j];
+                        else a.appendChild(document.createTextNode(' ' + footerLinks[i][j]));
+                    } else {
+                        a.textContent = footerLinks[i][j];
+                    }
+                }
+            });
+        });
+        var footerBottom = document.querySelector('.footer-bottom p');
+        if(footerBottom) footerBottom.textContent = lang === 'vi' ? '© 2025 Fullstack Education. Tất cả quyền được bảo lưu.' : '© 2025 Fullstack Education. All rights reserved.';
+       
+        // Menu (header)
+        var menuLinks = document.querySelectorAll('.menu > li > a');
+        var menuTextVi = ['Trang Chủ', 'Giới Thiệu', 'Khóa Học', 'Phản Hồi'];
+        var menuTextEn = ['Home', 'About', 'Courses', 'Feedback'];
+        var menuIdx = 0;
+        menuLinks.forEach(function(link) {
+            var li = link.parentElement;
+            if(li && !li.classList.contains('language-switch') && !li.classList.contains('account-icon-li') && menuIdx < menuTextVi.length) {
+                link.textContent = lang === 'vi' ? menuTextVi[menuIdx] : menuTextEn[menuIdx];
+                menuIdx++;
+            }
+        });
+        // submenu Khóa Học (không ảnh hưởng submenu ngôn ngữ)
+        var khoaHocMenu = document.querySelector('.menu > li.has-submenu > a[href="courses.html"]');
+        if (khoaHocMenu) {
+            khoaHocMenu.textContent = lang === 'vi' ? 'Khóa Học' : 'Courses';
+        }
+        var khoaHocSubmenu = null;
+        var menuItems = document.querySelectorAll('.menu > li.has-submenu');
+        menuItems.forEach(function(item) {
+            var a = item.querySelector('a');
+            if (a && (a.getAttribute('href') === 'courses.html' || a.textContent.trim() === 'Khóa Học' || a.textContent.trim() === 'Courses')) {
+                khoaHocSubmenu = item.querySelector('ul.submenu');
+            }
+        });
+        if (khoaHocSubmenu) {
+            var khoaHocLinks = khoaHocSubmenu.querySelectorAll('li > a');
+            if (khoaHocLinks.length >= 5) {
+                khoaHocLinks[0].textContent = lang === 'vi' ? 'Thiết kế Web' : 'Web Design';
+                khoaHocLinks[1].textContent = lang === 'vi' ? 'Lập trình Python' : 'Python Programming';
+                khoaHocLinks[2].textContent = lang === 'vi' ? 'Lập trình Java' : 'Java Programming';
+                khoaHocLinks[3].textContent = lang === 'vi' ? 'Cơ sở dữ liệu' : 'Database';
+                khoaHocLinks[4].textContent = lang === 'vi' ? 'Lập trình C# .Net' : 'C# .Net Programming';
+            }
+        }
+        // submenu Account
+        var accountSubmenu = document.querySelector('.account-submenu');
+        if (accountSubmenu) {
+            var accountLinks = accountSubmenu.querySelectorAll('li > a');
+            if (accountLinks.length >= 2) {
+                accountLinks[0].textContent = lang === 'vi' ? 'Tài khoản' : 'Account';
+                accountLinks[1].textContent = lang === 'vi' ? 'Đăng xuất' : 'Logout';
+            }
+        }
+        // Đổi ngôn ngữ cho form feedback
+        var feedbackForm = document.getElementById('feedbackForm');
+        if (feedbackForm) {
+            var nameLabel = feedbackForm.querySelector('label[for="name"]');
+            var emailLabel = feedbackForm.querySelector('label[for="email"]');
+            var subjectLabel = feedbackForm.querySelector('label[for="subject"]');
+            var messageLabel = feedbackForm.querySelector('label[for="message"]');
+            var nameInput = feedbackForm.querySelector('#name');
+            var emailInput = feedbackForm.querySelector('#email');
+            var subjectInput = feedbackForm.querySelector('#subject');
+            var messageInput = feedbackForm.querySelector('#message');
+            var sendBtn = feedbackForm.querySelector('button[type="submit"]');
+            var formTitle = feedbackForm.parentElement.querySelector('h2');
+            var successMsg = document.getElementById('feedbackSuccess');
+            if (formTitle) formTitle.textContent = lang === 'vi' ? 'Gửi góp ý/Phản hồi' : 'Send Feedback / Contact';
+            if (nameLabel) nameLabel.textContent = lang === 'vi' ? 'Họ và tên *' : 'Full Name *';
+            if (emailLabel) emailLabel.textContent = lang === 'vi' ? 'Email *' : 'Email *';
+            if (subjectLabel) subjectLabel.textContent = lang === 'vi' ? 'Chủ đề' : 'Subject';
+            if (messageLabel) messageLabel.textContent = lang === 'vi' ? 'Nội dung *' : 'Message *';
+            if (nameInput) nameInput.placeholder = lang === 'vi' ? 'Nhập họ và tên' : 'Enter your name';
+            if (emailInput) emailInput.placeholder = lang === 'vi' ? 'Nhập email' : 'Enter your email';
+            if (subjectInput) subjectInput.placeholder = lang === 'vi' ? 'Chủ đề góp ý' : 'Feedback subject';
+            if (messageInput) messageInput.placeholder = lang === 'vi' ? 'Nhập nội dung góp ý hoặc câu hỏi của bạn...' : 'Enter your feedback or question...';
+            if (sendBtn) sendBtn.innerHTML = lang === 'vi' ? '<i class="fas fa-paper-plane"></i> Gửi góp ý' : '<i class="fas fa-paper-plane"></i> Send Feedback';
+            if (successMsg) successMsg.innerHTML = lang === 'vi' ? '<i class="fas fa-check-circle"></i> Cảm ơn bạn đã gửi góp ý!' : '<i class="fas fa-check-circle"></i> Thank you for your feedback!';
+        }
+        // Đổi ngôn ngữ cho phần thông tin liên hệ
+        var contactInfo = document.querySelector('.contact-info');
+        if (contactInfo) {
+            var h2 = contactInfo.querySelector('h2');
+            if (h2) h2.textContent = lang === 'vi' ? 'Thông tin liên hệ' : 'Contact Information';
+            var lis = contactInfo.querySelectorAll('ul > li');
+            if (lis.length >= 4) {
+                lis[0].innerHTML = '<span class="material-icons" style="vertical-align:middle;color:#1976d2;">location_on</span> ' + (lang === 'vi' ? 'Địa chỉ: 12 Chùa Bộc, Đống Đa, Hà Nội' : 'Address: 12 Chua Boc, Dong Da, Hanoi');
+                lis[1].innerHTML = '<span class="material-icons" style="vertical-align:middle;color:#1976d2;">email</span> Email: <a href="mailto:simplelearning@edu.vn">simplelearning@edu.vn</a>';
+                lis[2].innerHTML = '<span class="material-icons" style="vertical-align:middle;color:#1976d2;">phone</span> ' + (lang === 'vi' ? 'Điện thoại: <a href="tel:0123456789">0123 456 789</a>' : 'Phone: <a href="tel:0123456789">0123 456 789</a>');
+                lis[3].innerHTML = '<span class="material-icons" style="vertical-align:middle;color:#1976d2;">public</span> Website: <a href="https://simplelearning.vn">simplelearning.vn</a>';
+            }
+            var connectTitle = contactInfo.querySelector('h3');
+            if (connectTitle) connectTitle.textContent = lang === 'vi' ? 'Kết nối với chúng tôi' : 'Connect with us';
+        }
+    }
+
+    function autoSetLanguageOnLoad() {
+        var lang = 'vi';
+        try {
+            var user = JSON.parse(localStorage.getItem('user'));
+            if (user && user.language) {
+                lang = user.language;
+            } else {
+                lang = localStorage.getItem('site_language') || 'vi';
+            }
+        } catch (e) {
+            lang = localStorage.getItem('site_language') || 'vi';
+        }
+        setLanguage(lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', autoSetLanguageOnLoad);
+    </script>
+    <script>
+        // JavaScript for responsive menu
+        const menuToggle = document.getElementById('menuToggle');
+        const menuClose = document.getElementById('menuClose');
+        const menu = document.getElementById('menu');
+        const overlay = document.getElementById('overlay');
+
+        menuToggle.addEventListener('click', () => {
+            if (menu.classList.contains('active')) {
+                // Nếu menu đang mở, nhấn lại toggle sẽ đóng
+                menu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            } else {
+                // Nếu menu đang đóng, nhấn toggle sẽ mở
+                menu.classList.add('active');
+                overlay.classList.add('active');
+                document.body.classList.add('menu-open');
+            } 
+        });
+
+        function closeMenu() {
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+
+        menuClose.addEventListener('click', closeMenu);
+        overlay.addEventListener('mousedown', function(e) {
+            // Chỉ tắt menu nếu click đúng vào overlay (không phải phần tử con)
+            if (e.target === overlay) {
+                closeMenu();
+            }
+        });
+
+        // Nút quay lại đầu trang
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if(window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Lottie GitHub logo in footer
+        var githubAnim = lottie.loadAnimation({
+            container: document.getElementById('github-lottie'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'img/icons8-github.json'
+        });
+        githubAnim.addEventListener('DOMLoaded', function() {
+            // Đổi màu stroke của tất cả path trong SVG sang trắng
+            var svg = document.querySelector('#github-lottie svg');
+            if(svg) {
+                var paths = svg.querySelectorAll('path');
+                paths.forEach(function(p) {
+                    if(p.getAttribute('stroke')) {
+                        p.setAttribute('stroke', '#fff');
+                    }
+                });
+            }
+        });
+
+        // Đăng xuất
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Xóa thông tin user khỏi localStorage
+                localStorage.removeItem('user');
+                localStorage.removeItem('site_language');
+                // Chuyển hướng về trang đăng nhập
+                window.location.href = 'index.html';
+            });
+        }
+    </script>
+    <script>
+        // Account icon dropdown toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            var accountLi = document.querySelector('.account-icon-li');
+            var accountA = accountLi ? accountLi.querySelector('a') : null;
+            var submenu = accountLi ? accountLi.querySelector('.account-submenu') : null;
+            if(accountLi && accountA && submenu) {
+                accountA.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    accountLi.classList.toggle('open');
+                });
+                // Đóng khi click ra ngoài
+                document.addEventListener('mousedown', function(e) {
+                    if(accountLi.classList.contains('open')) {
+                        if(!accountLi.contains(e.target)) {
+                            accountLi.classList.remove('open');
+                        }
+                    }
+                });
+                // Đóng khi tab chuyển focus ra ngoài
+                document.addEventListener('focusin', function(e) {
+                    if(accountLi.classList.contains('open')) {
+                        if(!accountLi.contains(e.target)) {
+                            accountLi.classList.remove('open');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="js/feedback.js"></script>
+</body>
+</html>

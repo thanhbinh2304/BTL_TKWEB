@@ -19,9 +19,11 @@
                     <span class="material-icons">menu</span>
                 </button>
                 <ul class="menu" id="menu">
-                    <button class="menu-close" id="menuClose">
-                        <span class="material-icons">close</span>
-                    </button>
+                    <li style="list-style:none;padding:0;margin:0;">
+                        <button class="menu-close" id="menuClose">
+                            <span class="material-icons">close</span>
+                        </button>
+                    </li>
                     <li class="has-submenu language-switch">
                         <a href="#" style="display:flex;align-items:center;">
                             <img src="https://flagcdn.com/24x18/vn.png" alt="VN" style="width:24px;height:18px;margin-right:4px;"> 
@@ -52,7 +54,11 @@
             </nav>
   </div>
 </header>
+
 <div class="header-spacer"></div>
+
+<div class="overlay" id="overlay"></div>
+
     <section class="form-section">
         <div class="container">
             <h2>Đăng Nhập</h2>
@@ -112,7 +118,7 @@
     </button>
 
     <script src="js/login.js"></script>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 
     <script >
@@ -160,6 +166,37 @@
             if(p) p.textContent = courseDescs[i];
             if(a) a.textContent = courseBtns;
         });
+        // Menu (header)
+        var menuLinks = document.querySelectorAll('.menu > li > a');
+        // Gán text động cho các mục menu chính, bỏ qua mục language-switch
+        var menuTextVi = ['Trang Chủ', 'Giới Thiệu', 'Khóa Học', 'Đăng Nhập', 'Phản Hồi'];
+        var menuTextEn = ['Home', 'About', 'Courses', 'Login', 'Feedback'];
+        var menuIdx = 0;
+        menuLinks.forEach(function(link) {
+            var li = link.parentElement;
+            if(li && !li.classList.contains('language-switch') && menuIdx < menuTextVi.length) {
+                link.textContent = lang === 'vi' ? menuTextVi[menuIdx] : menuTextEn[menuIdx];
+                menuIdx++;
+            }
+        });
+        // submenu Khóa Học (chỉ đổi submenu của menu Khóa Học, không phải ngôn ngữ)
+        var khoaHocMenu = Array.from(document.querySelectorAll('.menu > li.has-submenu')).find(function(li) {
+            var a = li.querySelector('a');
+            return a && a.getAttribute('href') && a.getAttribute('href').indexOf('courses.html') !== -1;
+        });
+        if (khoaHocMenu) {
+            var khoaHocSubmenu = khoaHocMenu.querySelector('ul.submenu');
+            if (khoaHocSubmenu) {
+                var khoaHocLinks = khoaHocSubmenu.querySelectorAll('li > a');
+                if (khoaHocLinks.length >= 5) {
+                    khoaHocLinks[0].textContent = lang === 'vi' ? 'Thiết kế Web' : 'Web Design';
+                    khoaHocLinks[1].textContent = lang === 'vi' ? 'Lập trình Python' : 'Python Programming';
+                    khoaHocLinks[2].textContent = lang === 'vi' ? 'Lập trình Java' : 'Java Programming';
+                    khoaHocLinks[3].textContent = lang === 'vi' ? 'Cơ sở dữ liệu' : 'Database';
+                    khoaHocLinks[4].textContent = lang === 'vi' ? 'Lập trình C# .Net' : 'C# .Net Programming';
+                }
+            }
+        }
         // Footer
         var footerSections = document.querySelectorAll('.footer-section h3');
         if(footerSections.length >= 4) {
@@ -168,18 +205,54 @@
             footerSections[2].textContent = lang === 'vi' ? 'Hỗ trợ' : 'Support';
             footerSections[3].textContent = lang === 'vi' ? 'Kết nối với chúng tôi' : 'Connect with us';
         }
+        // Footer links
+        var footerLinks = [
+            // Về chúng tôi
+            [
+                lang === 'vi' ? 'Giới thiệu' : 'About',
+                lang === 'vi' ? 'Đội ngũ' : 'Team',
+                lang === 'vi' ? 'Tuyển dụng' : 'Careers',
+                lang === 'vi' ? 'Liên hệ' : 'Contact'
+            ],
+            // Khóa học
+            [
+                lang === 'vi' ? 'Frontend' : 'Frontend',
+                lang === 'vi' ? 'Backend' : 'Backend',
+                lang === 'vi' ? 'Database' : 'Database'
+            ],
+            // Hỗ trợ
+            [
+                lang === 'vi' ? 'Trung tâm trợ giúp' : 'Help Center',
+                lang === 'vi' ? 'Câu hỏi thường gặp' : 'FAQ',
+                lang === 'vi' ? 'Chính sách bảo mật' : 'Privacy Policy',
+                lang === 'vi' ? 'Điều khoản sử dụng' : 'Terms of Use'
+            ],
+            // Kết nối với chúng tôi
+            [
+                lang === 'vi' ? 'Facebook' : 'Facebook',
+                lang === 'vi' ? 'YouTube' : 'YouTube',
+                lang === 'vi' ? 'GitHub' : 'GitHub'
+            ]
+        ];
+        var footerSectionUls = document.querySelectorAll('.footer-section ul');
+        footerSectionUls.forEach(function(ul, i) {
+            var lis = ul.querySelectorAll('li');
+            lis.forEach(function(li, j) {
+                var a = li.querySelector('a');
+                if(a && footerLinks[i] && footerLinks[i][j]) {
+                    var icon = a.querySelector('img, div');
+                    if(icon) {
+                        var nodes = Array.from(a.childNodes).filter(function(n) { return n.nodeType === 3; });
+                        if(nodes.length > 0) nodes[0].textContent = ' ' + footerLinks[i][j];
+                        else a.append(' ' + footerLinks[i][j]);
+                    } else {
+                        a.textContent = footerLinks[i][j];
+                    }
+                }
+            });
+        });
         var footerBottom = document.querySelector('.footer-bottom p');
         if(footerBottom) footerBottom.textContent = lang === 'vi' ? '© 2025 Fullstack Education. Tất cả quyền được bảo lưu.' : '© 2025 Fullstack Education. All rights reserved.';
-        // Menu
-        var menuLinks = document.querySelectorAll('.menu > li > a');
-        if(menuLinks.length >= 7) {
-            menuLinks[1].textContent = lang === 'vi' ? 'Trang Chủ' : 'Home';
-            menuLinks[2].textContent = lang === 'vi' ? 'Giới Thiệu' : 'About';
-            menuLinks[3].textContent = lang === 'vi' ? 'Khóa Học' : 'Courses';
-            menuLinks[4].textContent = lang === 'vi' ? 'Đăng Nhập' : 'Login';
-            menuLinks[5].textContent = lang === 'vi' ? 'Đăng Ký' : 'Register';
-            menuLinks[6].textContent = lang === 'vi' ? 'Phản Hồi' : 'Feedback';
-        }
         // submenu Khóa Học (không ảnh hưởng submenu ngôn ngữ)
         var allSubmenus = document.querySelectorAll('.menu > li.has-submenu > ul.submenu');
         if (allSubmenus.length > 1) {
@@ -191,6 +264,27 @@
                 khoaHocLinks[2].textContent = lang === 'vi' ? 'Lập trình Java' : 'Java Programming';
                 khoaHocLinks[3].textContent = lang === 'vi' ? 'Cơ sở dữ liệu' : 'Database';
                 khoaHocLinks[4].textContent = lang === 'vi' ? 'Lập trình C# .Net' : 'C# .Net Programming';
+            }
+        }
+        // Đổi ngôn ngữ cho form đăng nhập
+        var loginSection = document.querySelector('.form-section');
+        if (loginSection) {
+            var h2 = loginSection.querySelector('h2');
+            if(h2) h2.textContent = lang === 'vi' ? 'Đăng Nhập' : 'Login';
+            var form = loginSection.querySelector('form.form');
+            if(form) {
+                var emailInput = form.querySelector('input[type="email"]');
+                var passInput = form.querySelector('input[type="password"]');
+                var btn = form.querySelector('button[type="submit"]');
+                if(emailInput) emailInput.placeholder = lang === 'vi' ? 'Email' : 'Email';
+                if(passInput) passInput.placeholder = lang === 'vi' ? 'Mật Khẩu' : 'Password';
+                if(btn) btn.textContent = lang === 'vi' ? 'Đăng Nhập' : 'Login';
+            }
+            var p = loginSection.querySelector('p');
+            if(p) {
+                var a = p.querySelector('a');
+                p.childNodes[0].textContent = lang === 'vi' ? 'Bạn chưa có tài khoản? ' : "Don't have an account? ";
+                if(a) a.textContent = lang === 'vi' ? 'Đăng ký ngay' : 'Register now';
             }
         }
     }
@@ -283,5 +377,6 @@
 
        
     </script>
+    <script src="js/lang-switch.js"></script>
 </body>
 </html>
