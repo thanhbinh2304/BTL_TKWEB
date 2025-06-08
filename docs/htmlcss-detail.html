@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chi Tiết Khóa Học C# .Net - Simple Learning</title>
+  <link rel="stylesheet" href="css//account.css">
+  <link rel="stylesheet" href="css/detail.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="container">
+        <div class="logo-title-group">
+          <img src="img/logo.jpg" alt="knowledge-sharing">
+          <h1>Simple Learning</h1>
+        </div>
+        <nav>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Mở menu">
+            <span class="material-icons">menu</span>
+          </button>
+          <ul class="menu" id="menu">
+            <li>
+              <button class="menu-close" id="menuClose" type="button" aria-label="Đóng menu">
+                <span class="material-icons">close</span>
+              </button>
+            </li>
+            <li class="has-submenu language-switch">
+              <a href="#" style="display:flex;align-items:center;">
+                <img src="https://flagcdn.com/24x18/vn.png" alt="VN" style="width:24px;height:18px;margin-right:4px;"> 
+                <span id="lang-label">Tiếng Việt</span>
+                <span class="material-icons" style="font-size:18px;margin-left:2px;">expand_more</span>
+              </a>
+              <ul class="submenu">
+                <li><a href="#" onclick="setLanguage('vi');return false;"><img src="https://flagcdn.com/24x18/vn.png" alt="VN"> Tiếng Việt</a></li>
+                <li><a href="#" onclick="setLanguage('en');return false;"><img src="https://flagcdn.com/24x18/gb.png" alt="EN"> English</a></li>
+              </ul>
+            </li>
+            <li><a href="index2.html">Trang Chủ</a></li>
+            <li><a href="gioithieu2.html">Giới Thiệu</a></li>
+            <li class="has-submenu">
+              <a href="courses.html">Khóa Học</a>
+              <ul class="submenu">
+                <li><a href="htmlcss-detail.html">HTML & CSS</a></li>
+                <li><a href="javascript-detail.html">JavaScript</a></li>
+                <li><a href="reactJS-detail.html">ReactJS</a></li>
+                <li><a href="python-detail.html">Lập trình Python</a></li>
+                <li><a href="java-detail.html">Lập trình Java</a></li>
+                <li><a href="sql-detail.html">Cơ sở dữ liệu</a></li>
+                <li><a href="Csharp-detail.html">Lập trình C# .Net</a></li>
+              </ul>
+            </li>
+            <li><a href="feedback.html">Phản Hồi</a></li>
+            <li class="account-icon-li has-submenu">
+              <a href="account.html" title="Tài khoản" aria-label="Tài khoản" style="display:flex;align-items:center;gap:4px;">
+                <span class="material-icons account-icon" style="font-size:26px;">account_circle</span>
+              </a>
+              <ul class="submenu account-submenu">
+                <li><a href="account.html">Tài khoản</a></li>
+                <li><a href="#" id="logoutBtn">Đăng xuất</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="header-spacer"></div>
+  <div class="overlay" id="overlay"></div>
+<!-- Nội dung khóa học HTML/CSS -->
+<main class="course-detail container">
+  <h1>Khóa học Thiết kế Web với HTML & CSS</h1>
+  <img src="img/html.png" alt="HTML/CSS Course" class="course-image">
+  
+  <h2>✨ Mô tả khóa học</h2>
+  <p>
+    Khóa học này cung cấp nền tảng vững chắc về <strong>HTML</strong> và <strong>CSS</strong>, giúp bạn tự tin xây dựng giao diện web hiện đại, chuẩn SEO và dễ dàng bảo trì. Học viên sẽ được hướng dẫn từng bước để hiểu cấu trúc trang web, tạo bố cục đẹp mắt và tương thích trên mọi thiết bị.
+  </p>
+  
+  <h2>📚 Nội dung chính</h2>
+  <ul>
+    <li>Hiểu cấu trúc cơ bản của một trang web</li>
+    <li>Thẻ HTML quan trọng: tiêu đề, đoạn văn, hình ảnh, liên kết, danh sách</li>
+    <li>Tạo biểu mẫu (forms), input và xử lý dữ liệu cơ bản</li>
+    <li>CSS cơ bản và nâng cao: selectors, màu sắc, font, margin, padding, box model</li>
+    <li>Thiết kế layout chuyên nghiệp với Flexbox và CSS Grid</li>
+    <li>Responsive design: giao diện tương thích mọi màn hình</li>
+    <li>Thực hành các dự án thực tế: Landing Page, Blog cá nhân, Portfolio</li>
+  </ul>
+  <div class="course-buttons">
+  <a href="html&cssytb/bai01hc.html" class="btn-blue">Học ngay</a>
+  <a href="index2.html" class="btn-blue">Quay lại trang chủ</a>
+</div>
+</main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Về chúng tôi</h3>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Đội ngũ</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Khóa học</h3>
+        <ul>
+          <li><a href="#">Frontend</a></li>
+          <li><a href="#">Backend</a></li>
+          <li><a href="#">Database</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Hỗ trợ</h3>
+        <ul>
+          <li><a href="#">Trung tâm trợ giúp</a></li>
+          <li><a href="#">Câu hỏi thường gặp</a></li>
+          <li><a href="#">Chính sách bảo mật</a></li>
+          <li><a href="#">Điều khoản sử dụng</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Kết nối với chúng tôi</h3>
+        <ul>
+          <li><a href="#"><img src="img/facebook-icon.svg" alt="Facebook" style="height:20px;width:20px;vertical-align:middle;margin-right:6px;"> Facebook</a></li>
+          <li><a href="#"><img src="img/youtube-icon.svg" alt="YouTube" style="height:20px;width:20px;vertical-align:middle;margin-right:6px;"> YouTube</a></li>
+          <li><a href="#"><div id="github-lottie" style="display:inline-block;height:20px;width:20px;vertical-align:middle;margin-right:6px;"></div> GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fullstack Education. Tất cả quyền được bảo lưu.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" title="Lên đầu trang" aria-label="Lên đầu trang">
+    <span class="material-icons">arrow_upward</span>
+  </button>
+  <script>
+    function setLanguage(lang) {
+      localStorage.setItem('site_language', lang);
+      // Đổi label và icon trên menu
+      var langLabel = document.getElementById('lang-label');
+      var langIcon = document.querySelector('.language-switch > a > img');
+      if(lang === 'vi') {
+        langLabel.textContent = 'Tiếng Việt';
+        langIcon.src = 'https://flagcdn.com/24x18/vn.png';
+        langIcon.alt = 'VN';
+      } else {
+        langLabel.textContent = 'English';
+        langIcon.src = 'https://flagcdn.com/24x18/gb.png';
+        langIcon.alt = 'EN';
+      }
+      // Menu (header)
+      var menuLinks = document.querySelectorAll('.menu > li > a');
+      var menuTextVi = ['Trang Chủ', 'Giới Thiệu', 'Khóa Học', 'Phản Hồi'];
+      var menuTextEn = ['Home', 'About', 'Courses', 'Feedback'];
+      var menuIdx = 0;
+      menuLinks.forEach(function(link) {
+        var li = link.parentElement;
+        if(li && !li.classList.contains('language-switch') && !li.classList.contains('account-icon-li') && menuIdx < menuTextVi.length) {
+          link.textContent = lang === 'vi' ? menuTextVi[menuIdx] : menuTextEn[menuIdx];
+          menuIdx++;
+        }
+      });
+      // submenu Khóa Học (đồng bộ đúng 7 mục)
+      var khoaHocMenu = Array.from(document.querySelectorAll('.menu > li.has-submenu')).find(function(li) {
+        var a = li.querySelector('a');
+        return a && a.getAttribute('href') && a.getAttribute('href').indexOf('courses.html') !== -1;
+      });
+      if (khoaHocMenu) {
+        var khoaHocSubmenu = khoaHocMenu.querySelector('ul.submenu');
+        if (khoaHocSubmenu) {
+          var khoaHocLinks = khoaHocSubmenu.querySelectorAll('li > a');
+          if (khoaHocLinks.length >= 7) {
+            khoaHocLinks[0].textContent = lang === 'vi' ? 'HTML & CSS' : 'HTML & CSS';
+            khoaHocLinks[1].textContent = lang === 'vi' ? 'JavaScript' : 'JavaScript';
+            khoaHocLinks[2].textContent = lang === 'vi' ? 'ReactJS' : 'ReactJS';
+            khoaHocLinks[3].textContent = lang === 'vi' ? 'Lập trình Python' : 'Python Programming';
+            khoaHocLinks[4].textContent = lang === 'vi' ? 'Lập trình Java' : 'Java Programming';
+            khoaHocLinks[5].textContent = lang === 'vi' ? 'Cơ sở dữ liệu' : 'Database';
+            khoaHocLinks[6].textContent = lang === 'vi' ? 'Lập trình C# .Net' : 'C# .Net Programming';
+          }
+        }
+      }
+      // submenu Account
+      var accountSubmenu = document.querySelector('.account-submenu');
+      if (accountSubmenu) {
+        var accountLinks = accountSubmenu.querySelectorAll('li > a');
+        if (accountLinks.length >= 2) {
+          accountLinks[0].textContent = lang === 'vi' ? 'Tài khoản' : 'Account';
+          accountLinks[1].textContent = lang === 'vi' ? 'Đăng xuất' : 'Logout';
+        }
+      }
+      // Tiêu đề và nội dung khóa học (HTML & CSS)
+      var mainTitle = document.querySelector('.course-detail h1');
+      if(mainTitle) mainTitle.textContent = lang === 'vi' ? 'Khóa học Thiết kế Web với HTML & CSS' : 'HTML & CSS Web Design Course';
+      var descTitle = document.querySelectorAll('.course-detail h2')[0];
+      if(descTitle) descTitle.textContent = lang === 'vi' ? '✨ Mô tả khóa học' : '✨ Course Description';
+      var descP = document.querySelector('.course-detail p');
+      if(descP) descP.innerHTML = lang === 'vi'
+        ? 'Khóa học này cung cấp nền tảng vững chắc về <strong>HTML</strong> và <strong>CSS</strong>, giúp bạn tự tin xây dựng giao diện web hiện đại, chuẩn SEO và dễ dàng bảo trì. Học viên sẽ được hướng dẫn từng bước để hiểu cấu trúc trang web, tạo bố cục đẹp mắt và tương thích trên mọi thiết bị.'
+        : 'This course provides a solid foundation in <strong>HTML</strong> and <strong>CSS</strong>, empowering you to confidently build modern, SEO-friendly, and maintainable web interfaces. You will be guided step-by-step to understand web structure, create beautiful layouts, and ensure compatibility across all devices.';
+      var contentTitle = document.querySelectorAll('.course-detail h2')[1];
+      if(contentTitle) contentTitle.textContent = lang === 'vi' ? '📚 Nội dung chính' : '📚 Main Content';
+      var ul = document.querySelector('.course-detail ul');
+      if(ul) {
+        var lis = ul.querySelectorAll('li');
+        if(lis.length >= 7) {
+          lis[0].textContent = lang === 'vi' ? 'Hiểu cấu trúc cơ bản của một trang web' : 'Understand the basic structure of a web page';
+          lis[1].textContent = lang === 'vi' ? 'Thẻ HTML quan trọng: tiêu đề, đoạn văn, hình ảnh, liên kết, danh sách' : 'Key HTML tags: headings, paragraphs, images, links, lists';
+          lis[2].textContent = lang === 'vi' ? 'Tạo biểu mẫu (forms), input và xử lý dữ liệu cơ bản' : 'Create forms, inputs, and basic data handling';
+          lis[3].textContent = lang === 'vi' ? 'CSS cơ bản và nâng cao: selectors, màu sắc, font, margin, padding, box model' : 'Basic & advanced CSS: selectors, colors, fonts, margin, padding, box model';
+          lis[4].textContent = lang === 'vi' ? 'Thiết kế layout chuyên nghiệp với Flexbox và CSS Grid' : 'Professional layouts with Flexbox and CSS Grid';
+          lis[5].textContent = lang === 'vi' ? 'Responsive design: giao diện tương thích mọi màn hình' : 'Responsive design: interfaces for all screens';
+          lis[6].textContent = lang === 'vi' ? 'Thực hành các dự án thực tế: Landing Page, Blog cá nhân, Portfolio' : 'Practical projects: Landing Page, Personal Blog, Portfolio';
+        }
+      }
+      // Nút
+      var btns = document.querySelectorAll('.course-buttons a');
+      if(btns.length >= 2) {
+        btns[0].textContent = lang === 'vi' ? 'Học ngay' : 'Start Learning';
+        btns[1].textContent = lang === 'vi' ? 'Quay lại trang chủ' : 'Back to Home';
+      }
+      // Footer
+      var footerSections = document.querySelectorAll('.footer-section h3');
+      if(footerSections.length >= 4) {
+        footerSections[0].textContent = lang === 'vi' ? 'Về chúng tôi' : 'About Us';
+        footerSections[1].textContent = lang === 'vi' ? 'Khóa học' : 'Courses';
+        footerSections[2].textContent = lang === 'vi' ? 'Hỗ trợ' : 'Support';
+        footerSections[3].textContent = lang === 'vi' ? 'Kết nối với chúng tôi' : 'Connect with us';
+      }
+      var footerLinks = [
+        [lang === 'vi' ? 'Giới thiệu' : 'About', lang === 'vi' ? 'Đội ngũ' : 'Team', lang === 'vi' ? 'Tuyển dụng' : 'Careers', lang === 'vi' ? 'Liên hệ' : 'Contact'],
+        [lang === 'vi' ? 'Frontend' : 'Frontend', lang === 'vi' ? 'Backend' : 'Backend', lang === 'vi' ? 'Database' : 'Database'],
+        [lang === 'vi' ? 'Trung tâm trợ giúp' : 'Help Center', lang === 'vi' ? 'Câu hỏi thường gặp' : 'FAQ', lang === 'vi' ? 'Chính sách bảo mật' : 'Privacy Policy', lang === 'vi' ? 'Điều khoản sử dụng' : 'Terms of Use'],
+        [lang === 'vi' ? 'Facebook' : 'Facebook', lang === 'vi' ? 'YouTube' : 'YouTube', lang === 'vi' ? 'GitHub' : 'GitHub']
+      ];
+      var footerSectionsUl = document.querySelectorAll('.footer-section ul');
+      footerSectionsUl.forEach(function(ul, i) {
+        var lis = ul.querySelectorAll('li');
+        lis.forEach(function(li, j) {
+          var a = li.querySelector('a');
+          if(a && footerLinks[i] && footerLinks[i][j]) {
+            var icon = a.querySelector('img, div');
+            if(icon) {
+              var textNodes = Array.from(a.childNodes).filter(function(n){return n.nodeType===3;});
+              if(textNodes.length > 0) textNodes[0].textContent = ' ' + footerLinks[i][j];
+              else a.appendChild(document.createTextNode(' ' + footerLinks[i][j]));
+            } else {
+              a.textContent = footerLinks[i][j];
+            }
+          }
+        });
+      });
+      var footerBottom = document.querySelector('.footer-bottom p');
+      if(footerBottom) footerBottom.textContent = lang === 'vi' ? '© 2025 Fullstack Education. Tất cả quyền được bảo lưu.' : '© 2025 Fullstack Education. All rights reserved.';
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/lang-switch.js"></script>
+  <script src="js/logic-allFile.js"></script>
+</body>
+</html>
+
+
+
+

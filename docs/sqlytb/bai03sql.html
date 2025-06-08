@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SQl cơ bản</title>
+  <link rel="stylesheet" href="../css/ytb.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <header class="header">
+    <div class="header-left">
+      <!-- Logo ở góc trái, click để về trang chủ -->
+      <a href="../index2.html" class="logo"><img src="../img/logo.jpg" alt="Simple Learning"></a>
+    </div>
+    <div class="header-center">
+      <!-- Tiêu đề khóa học ở giữa -->
+      <h1>Khóa học lập trình Html&Css cơ bản</h1>
+    </div>
+    <div class="header-right">
+      <!-- Nút quay lại ở góc phải, click về trang thông tin khóa học -->
+      <a href="../sql-detail.html" class="back-button">Quay lại</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <h2><i class="fas fa-list"></i> Danh sách bài giảng</h2>
+      <div class="search-box-wrapper">
+        <input type="text" placeholder="Tìm bài học..." class="search-box" id="searchBox" />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <ul class="lesson-list" id="lessonList">
+        <li><a href="bai01sql.html">01. Giới thiệu SQL và SQL server</a></li>
+        <li><a href="bai02sql.html">02. Tạo database</a></li>
+        <li class="active"><a href="bai03sql.html">03. Tạo bảng</a></li>
+        <li><a href="bai04sql.html">04. Kiểu dữ liệu trong SQL</a></li>
+        <li><a href="bai05sql.html">05. Insert, delete, update table</a></li>
+        <li><a href="bai06sql.html">06. Tạo khóa chính</a></li>
+        <li><a href="bai07sql.html">07. Tạo khóa ngoại</a></li>
+        <li><a href="bai08sql.html">08. Truy vấn cơ bản</a></li>
+        <li><a href="bai09sql.html">09. Truy vấn với điều kiện</a></li>
+        <li><a href="bai10sql.html">10. Tìm kiếm gần đúng</a></li>
+      </ul>
+      <div class="no-results" id="noResults">Không tìm thấy bài học phù hợp</div>
+    </aside>
+
+    <section class="content">
+      <div class="video-wrapper">
+        <iframe 
+          width="1000" 
+          height="700" 
+          src="https://www.youtube.com/embed/TrLKdQH_Qng?si=01kg7w7ONfl4A6rN" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+
+</body>
+</html>
+      </ul>
+      <div class="no-results" id="noResults">Không tìm thấy bài học phù hợp</div>
+    </aside>
+
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchBox = document.getElementById('searchBox');
+      const lessonList = document.getElementById('lessonList');
+      const lessons = lessonList.getElementsByTagName('li');
+      const noResults = document.getElementById('noResults');
+
+      searchBox.addEventListener('input', function() {
+        const searchTerm = this.value.trim().toLowerCase();
+        let hasResults = false;
+        
+        // Lặp qua tất cả các bài học
+        for (let i = 0; i < lessons.length; i++) {
+          const lesson = lessons[i];
+          const lessonText = lesson.textContent.toLowerCase();
+          
+          // Kiểm tra nếu bài học chứa từ khóa tìm kiếm
+          if (lessonText.includes(searchTerm)) {
+            lesson.classList.remove('hidden');
+            lesson.classList.add('highlight');
+            hasResults = true;
+          } else {
+            lesson.classList.add('hidden');
+            lesson.classList.remove('highlight');
+          }
+        }
+        
+        // Hiển thị thông báo nếu không có kết quả
+        if (hasResults || searchTerm === '') {
+          noResults.style.display = 'none';
+        } else {
+          noResults.style.display = 'block';
+        }
+        
+        // Highlight từ khóa tìm kiếm trong kết quả
+        if (searchTerm !== '') {
+          const regex = new RegExp(searchTerm, 'gi');
+          for (let i = 0; i < lessons.length; i++) {
+            const lesson = lessons[i];
+            if (!lesson.classList.contains('hidden')) {
+              const lessonLink = lesson.querySelector('a');
+              const originalText = lessonLink.dataset.originalText || lessonLink.innerHTML;
+              lessonLink.dataset.originalText = originalText;
+              lessonLink.innerHTML = originalText.replace(regex, match => 
+                `<span style="background-color: #4d90fe; color: white; padding: 2px 4px; border-radius: 4px;">${match}</span>`
+              );
+            }
+          }
+        } else {
+          // Khôi phục nội dung gốc khi không có từ khóa tìm kiếm
+          for (let i = 0; i < lessons.length; i++) {
+            const lesson = lessons[i];
+            const lessonLink = lesson.querySelector('a');
+            if (lessonLink.dataset.originalText) {
+              lessonLink.innerHTML = lessonLink.dataset.originalText;
+            }
+          }
+        }
+      });
+      
+      // Xử lý khi nhấn phím Esc để xóa tìm kiếm
+      searchBox.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          this.value = '';
+          const event = new Event('input');
+          this.dispatchEvent(event);
+          this.blur();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

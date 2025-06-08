@@ -114,31 +114,37 @@
     gap: 16px;
     margin-top: 10px;
 }
-.btn-primary {
-    background: #333;
+.btn.btn-primary {
+    background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     padding: 10px 22px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px #1976d233;
+    transition: background 0.2s, box-shadow 0.2s;
 }
-.btn-primary:hover {
-    background: #555;
+.btn.btn-primary:hover, .btn.btn-primary:focus {
+    background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+    box-shadow: 0 4px 16px #1976d244;
+    color: #fff;
 }
-.btn-secondary {
-    background: #eee;
-    color: #333;
-    border: none;
-    border-radius: 5px;
+.btn.btn-secondary {
+    background: #f3f3f3;
+    color: #1976d2;
+    border: 1px solid #1976d2;
+    border-radius: 6px;
     padding: 10px 22px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
-.btn-secondary:hover {
-    background: #ddd;
+.btn.btn-secondary:hover, .btn.btn-secondary:focus {
+    background: #e3f2fd;
+    color: #1565c0;
+    box-shadow: 0 2px 8px #1976d233;
 }
 
 /* Success Message */

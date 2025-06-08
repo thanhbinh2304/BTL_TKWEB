@@ -37,15 +37,17 @@
                             </ul>
                         </li>
                         <li><a href="index2.html">Trang Chủ</a></li>
-                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li><a href="gioithieu2.html">Giới Thiệu</a></li>
                         <li class="has-submenu">
                             <a href="courses.html">Khóa Học</a>
                             <ul class="submenu">
-                                <li><a href="">Thiết kế Web</a></li>
-                                <li><a href="">Lập trình Python </a></li>
-                                <li><a href="">Lập trình Java</a></li>
-                                <li><a href="">Cơ sở dữ liệu</a></li>
-                                <li><a href="">Lập trình C# .Net</a></li>
+                                <li><a href="htmlcss-detail.html">HTML & CSS</a></li>
+                                <li><a href="javascript-detail.html">JavaScript</a></li>
+                                <li><a href="reactJS-detail.html">ReactJS</a></li>
+                                <li><a href="python-detail.html">Lập trình Python </a></li>
+                                <li><a href="java-detail.html">Lập trình Java</a></li>
+                                <li><a href="sql-detail.html">Cơ sở dữ liệu</a></li>
+                                <li><a href="Csharp-detail.html">Lập trình C# .Net</a></li>
                             </ul>
                         </li>
                         <li><a href="feedback.html">Phản Hồi</a></li>
@@ -77,13 +79,13 @@
     <section class="hero-modern has-bg-image" aria-label="hero-modern">
         <div class="hero-modern-container">
             <div class="hero-modern-content">
-                <h1 class="hero-modern-title">
+                <h1 class="hero-modern-title" id="hero-modern-title">
                     The Best Program to <span class="highlight">Enroll</span> for Exchange
                 </h1>
-                <p class="hero-modern-text">
+                <p class="hero-modern-text" id="hero-modern-text">
                     Learn, share, and develop your skills with the modern programming community.
                 </p>
-                <a href="courses.html" class="btn hero-modern-btn">
+                <a href="courses.html" class="btn hero-modern-btn" id="hero-modern-btn">
                     <span>Find courses</span>
                     <span class="material-icons" style="font-size:20px;vertical-align:middle;">arrow_forward</span>
                 </a>
@@ -199,6 +201,13 @@
             heroH2.textContent = lang === 'vi' ? 'Học Lập Trình Từ Cơ Bản Đến Nâng Cao' : 'Learn Programming from Basic to Advanced';
             heroP.textContent = lang === 'vi' ? 'Tham gia ngay hôm nay để trở thành lập trình viên chuyên nghiệp!' : 'Join today to become a professional developer!';
         }
+        // Hero modern section (đổi ngôn ngữ động)
+        var heroModernTitle = document.getElementById('hero-modern-title');
+        var heroModernText = document.getElementById('hero-modern-text');
+        var heroModernBtn = document.getElementById('hero-modern-btn');
+        if(heroModernTitle) heroModernTitle.innerHTML = lang === 'vi' ? 'Chương trình <span class="highlight">tốt nhất</span> để trao đổi' : 'The Best Program to <span class="highlight">Enroll</span> for Exchange';
+        if(heroModernText) heroModernText.textContent = lang === 'vi' ? 'Học hỏi, chia sẻ và phát triển kỹ năng cùng cộng đồng lập trình hiện đại.' : 'Learn, share, and develop your skills with the modern programming community.';
+        if(heroModernBtn) heroModernBtn.querySelector('span').textContent = lang === 'vi' ? 'Tìm khóa học' : 'Find courses';
         // Courses section
         var coursesTitle = document.querySelector('.courses .container h2, .courses-title-highlight');
         if(coursesTitle) coursesTitle.textContent = lang === 'vi' ? 'Khóa học nổi bật' : 'Featured Courses';
@@ -285,7 +294,7 @@
         // Tìm đúng các menu chính (bỏ qua các li không phải menu chính)
         var menuMap = [
             {vi: 'Trang Chủ', en: 'Home', href: 'index2.html'},
-            {vi: 'Giới Thiệu', en: 'About', href: 'about.html'},
+            {vi: 'Giới Thiệu', en: 'About', href: 'gioithieu2.html'},
             {vi: 'Khóa Học', en: 'Courses', href: 'courses.html'},
             {vi: 'Phản Hồi', en: 'Feedback', href: 'feedback.html'}
         ];
@@ -307,12 +316,14 @@
             var khoaHocSubmenu = khoaHocMenu.querySelector('ul.submenu');
             if (khoaHocSubmenu) {
                 var khoaHocLinks = khoaHocSubmenu.querySelectorAll('li > a');
-                if (khoaHocLinks.length >= 5) {
-                    khoaHocLinks[0].textContent = lang === 'vi' ? 'Thiết kế Web' : 'Web Design';
-                    khoaHocLinks[1].textContent = lang === 'vi' ? 'Lập trình Python' : 'Python Programming';
-                    khoaHocLinks[2].textContent = lang === 'vi' ? 'Lập trình Java' : 'Java Programming';
-                    khoaHocLinks[3].textContent = lang === 'vi' ? 'Cơ sở dữ liệu' : 'Database';
-                    khoaHocLinks[4].textContent = lang === 'vi' ? 'Lập trình C# .Net' : 'C# .Net Programming';
+                if (khoaHocLinks.length >= 7) {
+                    khoaHocLinks[0].textContent = lang === 'vi' ? 'HTML & CSS' : 'HTML & CSS';
+                    khoaHocLinks[1].textContent = lang === 'vi' ? 'JavaScript' : 'JavaScript';
+                    khoaHocLinks[2].textContent = lang === 'vi' ? 'ReactJS' : 'ReactJS';
+                    khoaHocLinks[3].textContent = lang === 'vi' ? 'Lập trình Python' : 'Python Programming';
+                    khoaHocLinks[4].textContent = lang === 'vi' ? 'Lập trình Java' : 'Java Programming';
+                    khoaHocLinks[5].textContent = lang === 'vi' ? 'Cơ sở dữ liệu' : 'Database';
+                    khoaHocLinks[6].textContent = lang === 'vi' ? 'Lập trình C# .Net' : 'C# .Net Programming';
                 }
             }
         }
@@ -326,93 +337,8 @@
             }
         }
     }
-
-    function autoSetLanguageOnLoad() {
-        var lang = 'vi';
-        try {
-            var user = JSON.parse(localStorage.getItem('user'));
-            if (user && user.language) {
-                lang = user.language;
-            } else {
-                lang = localStorage.getItem('site_language') || 'vi';
-            }
-        } catch (e) {
-            lang = localStorage.getItem('site_language') || 'vi';
-        }
-        setLanguage(lang);
-    }
-
-    document.addEventListener('DOMContentLoaded', autoSetLanguageOnLoad);
     </script>
     <script>
-        // JavaScript for responsive menu
-        const menuToggle = document.getElementById('menuToggle');
-        const menuClose = document.getElementById('menuClose');
-        const menu = document.getElementById('menu');
-        const overlay = document.getElementById('overlay');
-
-        menuToggle.addEventListener('click', () => {
-            if (menu.classList.contains('active')) {
-                // Nếu menu đang mở, nhấn lại toggle sẽ đóng
-                menu.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            } else {
-                // Nếu menu đang đóng, nhấn toggle sẽ mở
-                menu.classList.add('active');
-                overlay.classList.add('active');
-                document.body.classList.add('menu-open');
-            } 
-        });
-
-        function closeMenu() {
-            menu.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
-
-        menuClose.addEventListener('click', closeMenu);
-        overlay.addEventListener('mousedown', function(e) {
-            // Chỉ tắt menu nếu click đúng vào overlay (không phải phần tử con)
-            if (e.target === overlay) {
-                closeMenu();
-            }
-        });
-
-        // Nút quay lại đầu trang
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', function() {
-            if(window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        backToTop.addEventListener('click', function() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        });
-
-        // Lottie GitHub logo in footer
-        var githubAnim = lottie.loadAnimation({
-            container: document.getElementById('github-lottie'),
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'img/icons8-github.json'
-        });
-        githubAnim.addEventListener('DOMLoaded', function() {
-            // Đổi màu stroke của tất cả path trong SVG sang trắng
-            var svg = document.querySelector('#github-lottie svg');
-            if(svg) {
-                var paths = svg.querySelectorAll('path');
-                paths.forEach(function(p) {
-                    if(p.getAttribute('stroke')) {
-                        p.setAttribute('stroke', '#fff');
-                    }
-                });
-            }
-        });
-
         // Hiệu ứng xuất hiện cho course-card khi cuộn tới
         function revealCoursesOnScroll() {
             var cards = document.querySelectorAll('.course-card');
@@ -428,51 +354,8 @@
         window.addEventListener('DOMContentLoaded', function() {
             revealCoursesOnScroll();
         });
-
-        // Đăng xuất
-        const logoutBtn = document.getElementById('logoutBtn');
-        if (logoutBtn) {
-            logoutBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Xóa thông tin user khỏi localStorage
-                localStorage.removeItem('user');
-                localStorage.removeItem('site_language');
-                // Chuyển hướng về trang đăng nhập
-                window.location.href = 'index.html';
-            });
-        }
     </script>
-    <script>
-        // Account icon dropdown toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            var accountLi = document.querySelector('.account-icon-li');
-            var accountA = accountLi ? accountLi.querySelector('a') : null;
-            var submenu = accountLi ? accountLi.querySelector('.account-submenu') : null;
-            if(accountLi && accountA && submenu) {
-                accountA.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    accountLi.classList.toggle('open');
-                });
-                // Đóng khi click ra ngoài
-                document.addEventListener('mousedown', function(e) {
-                    if(accountLi.classList.contains('open')) {
-                        if(!accountLi.contains(e.target)) {
-                            accountLi.classList.remove('open');
-                        }
-                    }
-                });
-                // Đóng khi tab chuyển focus ra ngoài
-                document.addEventListener('focusin', function(e) {
-                    if(accountLi.classList.contains('open')) {
-                        if(!accountLi.contains(e.target)) {
-                            accountLi.classList.remove('open');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="js/logic-allFile.js"></script>
     <script src="js/lang-switch.js"></script>
 </body>
 </html>

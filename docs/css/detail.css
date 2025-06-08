@@ -1,0 +1,84 @@
+/* Nội dung khóa học C#.Net - căn giữa, responsive, style nút, ảnh, danh sách */
+.course-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 32px 12px 48px 12px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px #0001;
+    margin-top: 3cm;
+}
+.course-detail h1, .course-detail h2, .course-detail p, .course-detail ul, .course-detail .course-buttons {
+    text-align: center;
+}
+.course-detail img.course-image {
+    display: block;
+    margin: 24px auto 24px auto;
+    max-width: 340px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px #0001;
+}
+.course-detail ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto 24px auto;
+    padding-left: 24px;
+}
+.course-detail .course-buttons {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+}
+.btn,
+.btn-blue,
+.button,
+.button-primary,
+.btn-hoc-ngay {
+    background-color: #357ae8;
+    color: #fff;
+    border: 2px solid #357ae8;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(53, 122, 232, 0.3);
+    text-decoration: none;
+    user-select: none;
+}
+.btn:hover,
+.btn-blue:hover,
+.button:hover,
+.button-primary:hover,
+.btn-hoc-ngay:hover {
+    background-color: #1e5fd0;
+    border-color: #1e5fd0;
+    box-shadow: 0 4px 14px rgba(30, 95, 208, 0.5);
+    transform: scale(1.05);
+}
+@media (max-width: 600px) {
+    .course-detail {
+        padding: 18px 2vw 32px 2vw;
+    }
+    .course-detail img.course-image {
+        max-width: 98vw;
+    }
+    .course-detail ul {
+        padding-left: 14px;
+    }
+    .course-detail .course-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

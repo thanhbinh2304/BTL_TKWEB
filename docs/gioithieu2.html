@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giới Thiệu - Simple Learning</title>
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/gioithieu.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="container">
+                <div class="logo-title-group">
+                    <img src="img/logo.jpg" alt="knowledge-sharing">
+                    <h1>Simple Learning</h1>
+                </div>
+                <nav>
+                    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Mở menu">
+                        <span class="material-icons">menu</span>
+                    </button>
+                    <ul class="menu" id="menu">
+                        <li style="list-style:none;padding:0;margin:0;">
+                            <button class="menu-close" id="menuClose" type="button" aria-label="Đóng menu">
+                                <span class="material-icons">close</span>
+                            </button>
+                        </li>
+                        <li class="has-submenu language-switch">
+                            <a href="#" style="display:flex;align-items:center;">
+                                <img src="https://flagcdn.com/24x18/vn.png" alt="VN" style="width:24px;height:18px;margin-right:4px;"> 
+                                <span id="lang-label">Tiếng Việt</span>
+                                <span class="material-icons" style="font-size:18px;margin-left:2px;">expand_more</span>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="#" onclick="setLanguage('vi');return false;"><img src="https://flagcdn.com/24x18/vn.png" alt="VN" style="width:24px;height:18px;margin-right:6px;">Tiếng Việt</a></li>
+                                <li><a href="#" onclick="setLanguage('en');return false;"><img src="https://flagcdn.com/24x18/gb.png" alt="EN" style="width:24px;height:18px;margin-right:6px;">English</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index2.html">Trang Chủ</a></li>
+                        <li><a href="gioithieu2.html">Giới Thiệu</a></li>
+                        <li class="has-submenu">
+                            <a href="courses.html">Khóa Học</a>
+                            <ul class="submenu">
+                                <li><a href="htmlcss-detail.html">HTML & CSS</a></li>
+                                <li><a href="javascript-detail.html">JavaScript</a></li>
+                                <li><a href="reactJS-detail.html">ReactJS</a></li>
+                                <li><a href="python-detail.html">Lập trình Python </a></li>
+                                <li><a href="java-detail.html">Lập trình Java</a></li>
+                                <li><a href="sql-detail.html">Cơ sở dữ liệu</a></li>
+                                <li><a href="Csharp-detail.html">Lập trình C# .Net</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="feedback.html">Phản Hồi</a></li>
+                        <li class="account-icon-li has-submenu">
+                            <a href="account.html" title="Tài khoản" aria-label="Tài khoản" style="display:flex;align-items:center;gap:4px;">
+                                <span class="material-icons account-icon" style="font-size:26px;vertical-align:middle;">account_circle</span>
+                            </a>
+                            <ul class="submenu account-submenu">
+                                <li><a href="account.html">Tài khoản</a></li>
+                                <li><a href="#" id="logoutBtn">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+<!-- MAIN CONTENT -->
+<main class="main-content container">
+
+    <!-- Giới thiệu -->
+    <section class="intro">
+        <div class="intro-row">
+            <div class="intro-image">
+                <img src="img/logotrang.png" alt="Simple Learning - Giới thiệu" />
+            </div>
+            <div class="intro-text">
+                <h2>Giới thiệu về chúng tôi</h2>
+                <p><strong>Simple Learning</strong> Simple Learning là một nền tảng học lập trình trực tuyến hàng đầu, được thiết kế đặc biệt dành cho cả những người mới bắt đầu chưa có kiến thức nền tảng lẫn những ai đã có kinh nghiệm và mong muốn nâng cao kỹ năng lập trình của mình.</p>
+                <p>Với giao diện thân thiện và dễ sử dụng, Simple Learning cung cấp hệ thống bài giảng chất lượng cao, đa dạng các khóa học từ cơ bản đến nâng cao. Nền tảng hỗ trợ nhiều ngôn ngữ lập trình phổ biến như Python, JavaScript, Java, C++ và nhiều hơn nữa, giúp người học có thể lựa chọn theo đúng mục tiêu và sở thích cá nhân.</p>
+                <p>Bên cạnh các bài giảng, Simple Learning còn hỗ trợ liên hệ để giúp người học áp dụng kiến thức một cách hiệu quả. Ngoài ra, cộng đồng học viên sôi nổi cùng đội ngũ giảng viên giàu kinh nghiệm luôn sẵn sàng hỗ trợ, đồng hành cùng bạn trên hành trình trở thành lập trình viên chuyên nghiệp !</p>
+            </div>
+        </div>
+
+        <!-- Ảnh lớn nằm bên dưới toàn bộ phần intro-row -->
+        <div class="intro-large-image">
+            <img src="img/gh.jpg" alt="Ảnh lớn giới thiệu" />
+        </div>
+    </section>
+
+    <!-- Tầm nhìn & Sứ mệnh -->
+    <section class="vision-mission">
+        <div class="vision">
+            <h3>Tầm Nhìn</h3>
+            <p>Trở thành nền tảng đào tạo lập trình trực tuyến hàng đầu, kết nối hàng triệu học viên và chuyên gia công nghệ trên toàn thế giới.</p>
+            <div class="vision-images">
+                <img src="img/cde.jpg" alt="Tầm Nhìn" />
+            </div>
+        </div>
+        <div class="mission">
+            <h3>Sứ Mệnh</h3>
+            <p>Cung cấp các khóa học chất lượng, phương pháp giảng dạy hiệu quả và môi trường học tập năng động, sáng tạo cho mọi đối tượng.</p>
+            <div class="mission-images">
+                <img src="img/abc.jpg" alt="Sứ Mệnh" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Học Viên Nói Gì -->
+    <section class="testimonials">
+        <h3>Học Viên Nói Gì Về Simple Learning</h3>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p>"Khóa học rất dễ hiểu, nội dung rõ ràng giúp tôi tiếp thu nhanh chóng. Giảng viên nhiệt tình, luôn giải đáp mọi thắc mắc một cách tận tâm."</p>
+                <h4>Nguyễn Văn Chiến</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Phương pháp giảng dạy dễ hiểu, hỗ trợ tận tình giúp tôi tự tin hơn khi học lập trình. Mọi thắc mắc đều được giảng viên giải đáp kịp thời."</p>
+                <h4>Trần Thị Nhung</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Nội dung khóa học trình bày rõ ràng, giảng viên nhiệt huyết luôn hỗ trợ chu đáo. Tôi rất hài lòng với trải nghiệm học tập tại đây."</p>
+                <h4>Phạm Văn Đạt</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Địa chỉ -->
+    <section class="address">
+        <h3>Liên Hệ Chúng Tôi</h3>
+        <p><strong>Địa chỉ:</strong> 12 Chùa Bộc, Đống Đa, Hà Nội</p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.465716772295!2d105.82853737504354!3d21.013544980633995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab691b3fdd63%3A0xeb3437303d83bcb3!2zMTIgxJAuIENodcOqYSBC4buZYywgxJDhu5NuZyDEkGEsIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1717597511276!5m2!1svi!2s"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            class="map-frame">
+        </iframe>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Về chúng tôi</h3>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Đội ngũ</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Khóa học</h3>
+                <ul>
+                    <li><a href="#">Frontend</a></li>
+                    <li><a href="#">Backend</a></li>
+                    <li><a href="#">Database</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hỗ trợ</h3>
+                <ul>
+                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết nối với chúng tôi</h3>
+                <ul>
+                    <li><a href="#"><img src="img/facebook-icon.svg" alt="Facebook" style="height:20px;width:20px;vertical-align:middle;margin-right:6px;"> Facebook</a></li>
+                    <li><a href="#"><img src="img/youtube-icon.svg" alt="YouTube" style="height:20px;width:20px;vertical-align:middle;margin-right:6px;"> YouTube</a></li>
+                    <li><a href="#"><div id="github-lottie" style="display:inline-block;height:20px;width:20px;vertical-align:middle;margin-right:6px;"></div> GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fullstack Education. Tất cả quyền được bảo lưu.</p>
+        </div>
+      </footer>
+      
+      <button id="backToTop" title="Lên đầu trang" aria-label="Lên đầu trang" type="button">
+        <span class="material-icons">arrow_upward</span>
+    </button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('site_language', lang);
+            // Đổi label và icon trên menu
+            var langLabel = document.getElementById('lang-label');
+            var langIcon = document.querySelector('.language-switch > a > img');
+            if(lang === 'vi') {
+                langLabel.textContent = 'Tiếng Việt';
+                langIcon.src = 'https://flagcdn.com/24x18/vn.png';
+                langIcon.alt = 'VN';
+            } else {
+                langLabel.textContent = 'English';
+                langIcon.src = 'https://flagcdn.com/24x18/gb.png';
+                langIcon.alt = 'EN';
+            }
+            // Menu (header) - chỉ đổi text cho đúng số lượng menu chính, không đổi các menu phụ hoặc lặp lại
+            var menuLinks = document.querySelectorAll('.menu > li > a');
+            var menuTextVi = ['Trang Chủ', 'Giới Thiệu', 'Khóa Học', 'Phản Hồi'];
+            var menuTextEn = ['Home', 'About', 'Courses', 'Feedback'];
+            var menuIdx = 0;
+            menuLinks.forEach(function(link) {
+                var li = link.parentElement;
+                // Bỏ qua language-switch và các menu có submenu (chỉ đổi text cho menu chính, không đổi text cho submenu)
+                if(li && !li.classList.contains('language-switch') && !li.classList.contains('has-submenu') && menuIdx < menuTextVi.length) {
+                    link.textContent = lang === 'vi' ? menuTextVi[menuIdx] : menuTextEn[menuIdx];
+                    menuIdx++;
+                }
+                // Đổi text cho menu chính có submenu (ví dụ: Khóa Học)
+                if(li && li.classList.contains('has-submenu') && !li.classList.contains('language-switch') && menuIdx < menuTextVi.length) {
+                    var a = li.querySelector('a');
+                    if(a) {
+                        a.textContent = lang === 'vi' ? menuTextVi[menuIdx] : menuTextEn[menuIdx];
+                        menuIdx++;
+                    }
+                }
+            });
+            // submenu Khóa Học (đúng 7 mục)
+            var khoaHocMenu = Array.from(document.querySelectorAll('.menu > li.has-submenu')).find(function(li) {
+                var a = li.querySelector('a');
+                return a && a.getAttribute('href') && a.getAttribute('href').indexOf('courses.html') !== -1;
+            });
+            if (khoaHocMenu) {
+                var khoaHocSubmenu = khoaHocMenu.querySelector('ul.submenu');
+                if (khoaHocSubmenu) {
+                    var khoaHocLinks = khoaHocSubmenu.querySelectorAll('li > a');
+                    if (khoaHocLinks.length >= 7) {
+                        khoaHocLinks[0].textContent = lang === 'vi' ? 'HTML & CSS' : 'HTML & CSS';
+                        khoaHocLinks[1].textContent = lang === 'vi' ? 'JavaScript' : 'JavaScript';
+                        khoaHocLinks[2].textContent = lang === 'vi' ? 'ReactJS' : 'ReactJS';
+                        khoaHocLinks[3].textContent = lang === 'vi' ? 'Lập trình Python' : 'Python Programming';
+                        khoaHocLinks[4].textContent = lang === 'vi' ? 'Lập trình Java' : 'Java Programming';
+                        khoaHocLinks[5].textContent = lang === 'vi' ? 'Cơ sở dữ liệu' : 'Database';
+                        khoaHocLinks[6].textContent = lang === 'vi' ? 'Lập trình C# .Net' : 'C# .Net Programming';
+                    }
+                }
+            }
+            
+            // Footer
+            var footerSections = document.querySelectorAll('.footer-section h3');
+            if(footerSections.length >= 4) {
+                footerSections[0].textContent = lang === 'vi' ? 'Về chúng tôi' : 'About Us';
+                footerSections[1].textContent = lang === 'vi' ? 'Khóa học' : 'Courses';
+                footerSections[2].textContent = lang === 'vi' ? 'Hỗ trợ' : 'Support';
+                footerSections[3].textContent = lang === 'vi' ? 'Kết nối với chúng tôi' : 'Connect with us';
+            }
+            // Footer links
+            var footerLinks = [
+                [lang === 'vi' ? 'Giới thiệu' : 'About', lang === 'vi' ? 'Đội ngũ' : 'Team', lang === 'vi' ? 'Tuyển dụng' : 'Careers', lang === 'vi' ? 'Liên hệ' : 'Contact'],
+                [lang === 'vi' ? 'Frontend' : 'Frontend', lang === 'vi' ? 'Backend' : 'Backend', lang === 'vi' ? 'Database' : 'Database'],
+                [lang === 'vi' ? 'Trung tâm trợ giúp' : 'Help Center', lang === 'vi' ? 'Câu hỏi thường gặp' : 'FAQ', lang === 'vi' ? 'Chính sách bảo mật' : 'Privacy Policy', lang === 'vi' ? 'Điều khoản sử dụng' : 'Terms of Use'],
+                [lang === 'vi' ? 'Facebook' : 'Facebook', lang === 'vi' ? 'YouTube' : 'YouTube', lang === 'vi' ? 'GitHub' : 'GitHub']
+            ];
+            var footerSectionUls = document.querySelectorAll('.footer-section ul');
+            footerSectionUls.forEach(function(ul, i) {
+                var lis = ul.querySelectorAll('li');
+                lis.forEach(function(li, j) {
+                    var a = li.querySelector('a');
+                    if(a && footerLinks[i] && footerLinks[i][j]) {
+                        var icon = a.querySelector('img, div');
+                        if(icon) {
+                            var nodes = Array.from(a.childNodes).filter(function(n) { return n.nodeType === 3; });
+                            if(nodes.length > 0) nodes[0].textContent = ' ' + footerLinks[i][j];
+                            else a.append(' ' + footerLinks[i][j]);
+                        } else {
+                            a.textContent = footerLinks[i][j];
+                        }
+                    }
+                });
+            });
+            var footerBottom = document.querySelector('.footer-bottom p');
+            if(footerBottom) footerBottom.textContent = lang === 'vi' ? '© 2025 Fullstack Education. Tất cả quyền được bảo lưu.' : '© 2025 Fullstack Education. All rights reserved.';
+            // Đổi ngôn ngữ cho phần nội dung chính (giới thiệu, tầm nhìn, sứ mệnh, testimonials, địa chỉ)
+            setTimeout(function() {
+                var introTitle = document.querySelector('.intro-text h2');
+                var introPs = document.querySelectorAll('.intro-text p');
+                if(introTitle) introTitle.textContent = lang === 'vi' ? 'Giới thiệu về chúng tôi' : 'About Us';
+                if(introPs.length >= 3) {
+                    introPs[0].innerHTML = lang === 'vi'
+                        ? '<strong>Simple Learning</strong> Simple Learning là một nền tảng học lập trình trực tuyến hàng đầu, được thiết kế đặc biệt dành cho cả những người mới bắt đầu chưa có kiến thức nền tảng lẫn những ai đã có kinh nghiệm và mong muốn nâng cao kỹ năng lập trình của mình.'
+                        : '<strong>Simple Learning</strong> is a leading online programming learning platform, designed for both beginners with no background and those who want to improve their coding skills.';
+                    introPs[1].textContent = lang === 'vi'
+                        ? 'Với giao diện thân thiện và dễ sử dụng, Simple Learning cung cấp hệ thống bài giảng chất lượng cao, đa dạng các khóa học từ cơ bản đến nâng cao. Nền tảng hỗ trợ nhiều ngôn ngữ lập trình phổ biến như Python, JavaScript, Java, C++ và nhiều hơn nữa, giúp người học có thể lựa chọn theo đúng mục tiêu và sở thích cá nhân.'
+                        : 'With a friendly and easy-to-use interface, Simple Learning offers high-quality lectures and a variety of courses from basic to advanced. The platform supports many popular programming languages such as Python, JavaScript, Java, C++, and more, helping learners choose according to their goals and interests.';
+                    introPs[2].textContent = lang === 'vi'
+                        ? 'Bên cạnh các bài giảng, Simple Learning còn hỗ trợ liên hệ để giúp người học áp dụng kiến thức một cách hiệu quả. Ngoài ra, cộng đồng học viên sôi nổi cùng đội ngũ giảng viên giàu kinh nghiệm luôn sẵn sàng hỗ trợ, đồng hành cùng bạn trên hành trình trở thành lập trình viên chuyên nghiệp !'
+                        : 'In addition to lectures, Simple Learning also provides support to help learners apply knowledge effectively. Moreover, an active student community and experienced instructors are always ready to support and accompany you on your journey to becoming a professional developer!';
+                }
+                // Vision & Mission
+                var visionTitle = document.querySelector('.vision h3');
+                var visionP = document.querySelector('.vision p');
+                var missionTitle = document.querySelector('.mission h3');
+                var missionP = document.querySelector('.mission p');
+                if(visionTitle) visionTitle.textContent = lang === 'vi' ? 'Tầm Nhìn' : 'Vision';
+                if(visionP) visionP.textContent = lang === 'vi'
+                    ? 'Trở thành nền tảng đào tạo lập trình trực tuyến hàng đầu, kết nối hàng triệu học viên và chuyên gia công nghệ trên toàn thế giới.'
+                    : 'To become a leading online programming education platform, connecting millions of learners and technology experts worldwide.';
+                if(missionTitle) missionTitle.textContent = lang === 'vi' ? 'Sứ Mệnh' : 'Mission';
+                if(missionP) missionP.textContent = lang === 'vi'
+                    ? 'Cung cấp các khóa học chất lượng, phương pháp giảng dạy hiệu quả và môi trường học tập năng động, sáng tạo cho mọi đối tượng.'
+                    : 'To provide quality courses, effective teaching methods, and a dynamic, creative learning environment for everyone.';
+                // Testimonials
+                var testimonialsTitle = document.querySelector('.testimonials h3');
+                var testimonialPs = document.querySelectorAll('.testimonial-card p');
+                var testimonialH4s = document.querySelectorAll('.testimonial-card h4');
+                if(testimonialsTitle) testimonialsTitle.textContent = lang === 'vi' ? 'Học Viên Nói Gì Về Simple Learning' : 'What Students Say About Simple Learning';
+                if(testimonialPs.length >= 3 && testimonialH4s.length >= 3) {
+                    testimonialPs[0].textContent = lang === 'vi'
+                        ? '"Khóa học rất dễ hiểu, nội dung rõ ràng giúp tôi tiếp thu nhanh chóng. Giảng viên nhiệt tình, luôn giải đáp mọi thắc mắc một cách tận tâm."'
+                        : '"The courses are easy to understand, clear content helps me learn quickly. The instructors are enthusiastic and always answer all questions thoroughly."';
+                    testimonialH4s[0].textContent = lang === 'vi' ? 'Nguyễn Văn Chiến' : 'Nguyen Van Chien';
+                    testimonialPs[1].textContent = lang === 'vi'
+                        ? '"Phương pháp giảng dạy dễ hiểu, hỗ trợ tận tình giúp tôi tự tin hơn khi học lập trình. Mọi thắc mắc đều được giảng viên giải đáp kịp thời."'
+                        : '"Easy-to-understand teaching methods, dedicated support helped me become more confident in learning programming. All questions are answered promptly by the instructors."';
+                    testimonialH4s[1].textContent = lang === 'vi' ? 'Trần Thị Nhung' : 'Tran Thi Nhung';
+                    testimonialPs[2].textContent = lang === 'vi'
+                        ? '"Nội dung khóa học trình bày rõ ràng, giảng viên nhiệt huyết luôn hỗ trợ chu đáo. Tôi rất hài lòng với trải nghiệm học tập tại đây."'
+                        : '"The course content is clearly presented, enthusiastic instructors always provide thoughtful support. I am very satisfied with the learning experience here."';
+                    testimonialH4s[2].textContent = lang === 'vi' ? 'Phạm Văn Đạt' : 'Pham Van Dat';
+                }
+                // Địa chỉ
+                var addressTitle = document.querySelector('.address h3');
+                var addressP = document.querySelector('.address p');
+                if(addressTitle) addressTitle.textContent = lang === 'vi' ? 'Liên Hệ Chúng Tôi' : 'Contact Us';
+                if(addressP) addressP.innerHTML = lang === 'vi'
+                    ? '<strong>Địa chỉ:</strong> 12 Chùa Bộc, Đống Đa, Hà Nội'
+                    : '<strong>Address:</strong> 12 Chua Boc, Dong Da, Hanoi';
+            }, 0);
+        }
+        // Đổi ngôn ngữ cho phần nội dung chính
+        // Giới thiệu
+        setTimeout(function() { // Đảm bảo DOM đã render xong
+            var introTitle = document.querySelector('.intro-text h2');
+            var introPs = document.querySelectorAll('.intro-text p');
+            if(introTitle) introTitle.textContent = lang === 'vi' ? 'Giới thiệu về chúng tôi' : 'About Us';
+            if(introPs.length >= 3) {
+                introPs[0].innerHTML = lang === 'vi'
+                    ? '<strong>Simple Learning</strong> Simple Learning là một nền tảng học lập trình trực tuyến hàng đầu, được thiết kế đặc biệt dành cho cả những người mới bắt đầu chưa có kiến thức nền tảng lẫn những ai đã có kinh nghiệm và mong muốn nâng cao kỹ năng lập trình của mình.'
+                    : '<strong>Simple Learning</strong> is a leading online programming learning platform, designed for both beginners with no background and those who want to improve their coding skills.';
+                introPs[1].textContent = lang === 'vi'
+                    ? 'Với giao diện thân thiện và dễ sử dụng, Simple Learning cung cấp hệ thống bài giảng chất lượng cao, đa dạng các khóa học từ cơ bản đến nâng cao. Nền tảng hỗ trợ nhiều ngôn ngữ lập trình phổ biến như Python, JavaScript, Java, C++ và nhiều hơn nữa, giúp người học có thể lựa chọn theo đúng mục tiêu và sở thích cá nhân.'
+                    : 'With a friendly and easy-to-use interface, Simple Learning offers high-quality lectures and a variety of courses from basic to advanced. The platform supports many popular programming languages such as Python, JavaScript, Java, C++, and more, helping learners choose according to their goals and interests.';
+                introPs[2].textContent = lang === 'vi'
+                    ? 'Bên cạnh các bài giảng, Simple Learning còn hỗ trợ liên hệ để giúp người học áp dụng kiến thức một cách hiệu quả. Ngoài ra, cộng đồng học viên sôi nổi cùng đội ngũ giảng viên giàu kinh nghiệm luôn sẵn sàng hỗ trợ, đồng hành cùng bạn trên hành trình trở thành lập trình viên chuyên nghiệp !'
+                    : 'In addition to lectures, Simple Learning also provides support to help learners apply knowledge effectively. Moreover, an active student community and experienced instructors are always ready to support and accompany you on your journey to becoming a professional developer!';
+            }
+            // Vision & Mission
+            var visionTitle = document.querySelector('.vision h3');
+            var visionP = document.querySelector('.vision p');
+            var missionTitle = document.querySelector('.mission h3');
+            var missionP = document.querySelector('.mission p');
+            if(visionTitle) visionTitle.textContent = lang === 'vi' ? 'Tầm Nhìn' : 'Vision';
+            if(visionP) visionP.textContent = lang === 'vi'
+                ? 'Trở thành nền tảng đào tạo lập trình trực tuyến hàng đầu, kết nối hàng triệu học viên và chuyên gia công nghệ trên toàn thế giới.'
+                : 'To become a leading online programming education platform, connecting millions of learners and technology experts worldwide.';
+            if(missionTitle) missionTitle.textContent = lang === 'vi' ? 'Sứ Mệnh' : 'Mission';
+            if(missionP) missionP.textContent = lang === 'vi'
+                ? 'Cung cấp các khóa học chất lượng, phương pháp giảng dạy hiệu quả và môi trường học tập năng động, sáng tạo cho mọi đối tượng.'
+                : 'To provide quality courses, effective teaching methods, and a dynamic, creative learning environment for everyone.';
+            // Testimonials
+            var testimonialsTitle = document.querySelector('.testimonials h3');
+            var testimonialPs = document.querySelectorAll('.testimonial-card p');
+            var testimonialH4s = document.querySelectorAll('.testimonial-card h4');
+            if(testimonialsTitle) testimonialsTitle.textContent = lang === 'vi' ? 'Học Viên Nói Gì Về Simple Learning' : 'What Students Say About Simple Learning';
+            if(testimonialPs.length >= 3 && testimonialH4s.length >= 3) {
+                testimonialPs[0].textContent = lang === 'vi'
+                    ? '"Khóa học rất dễ hiểu, nội dung rõ ràng giúp tôi tiếp thu nhanh chóng. Giảng viên nhiệt tình, luôn giải đáp mọi thắc mắc một cách tận tâm."'
+                    : '"The courses are easy to understand, clear content helps me learn quickly. The instructors are enthusiastic and always answer all questions thoroughly."';
+                testimonialH4s[0].textContent = lang === 'vi' ? 'Nguyễn Văn Chiến' : 'Nguyen Van Chien';
+                testimonialPs[1].textContent = lang === 'vi'
+                    ? '"Phương pháp giảng dạy dễ hiểu, hỗ trợ tận tình giúp tôi tự tin hơn khi học lập trình. Mọi thắc mắc đều được giảng viên giải đáp kịp thời."'
+                    : '"Easy-to-understand teaching methods, dedicated support helped me become more confident in learning programming. All questions are answered promptly by the instructors."';
+                testimonialH4s[1].textContent = lang === 'vi' ? 'Trần Thị Nhung' : 'Tran Thi Nhung';
+                testimonialPs[2].textContent = lang === 'vi'
+                    ? '"Nội dung khóa học trình bày rõ ràng, giảng viên nhiệt huyết luôn hỗ trợ chu đáo. Tôi rất hài lòng với trải nghiệm học tập tại đây."'
+                    : '"The course content is clearly presented, enthusiastic instructors always provide thoughtful support. I am very satisfied with the learning experience here."';
+                testimonialH4s[2].textContent = lang === 'vi' ? 'Phạm Văn Đạt' : 'Pham Van Dat';
+            }
+            // Địa chỉ
+            var addressTitle = document.querySelector('.address h3');
+            var addressP = document.querySelector('.address p');
+            if(addressTitle) addressTitle.textContent = lang === 'vi' ? 'Liên Hệ Chúng Tôi' : 'Contact Us';
+            if(addressP) addressP.innerHTML = lang === 'vi'
+                ? '<strong>Địa chỉ:</strong> 12 Chùa Bộc, Đống Đa, Hà Nội'
+                : '<strong>Address:</strong> 12 Chua Boc, Dong Da, Hanoi';
+        }, 0);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="js/lang-switch.js"></script>
+    <script src="js/logic-allFile.js"></script>
+</body>
+</html>

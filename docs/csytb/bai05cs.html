@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C# cơ bản</title>
+  <link rel="stylesheet" href="../css/ytb.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <!-- Logo ở góc trái, click để về trang chủ -->
+      <a href="../index2.html" class="logo"><img src="../img/logo.jpg" alt="Simple Learning"></a>
+    </div>
+    <div class="header-center">
+      <!-- Tiêu đề khóa học ở giữa -->
+      <h1>Khóa học lập trình Html&Css cơ bản</h1>
+    </div>
+    <div class="header-right">
+      <!-- Nút quay lại ở góc phải, click về trang thông tin khóa học -->
+      <a href="../Csharp-detail.html" class="back-button">Quay lại</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <h2><i class="fas fa-list"></i> Danh sách bài giảng</h2>
+      <div class="search-box-wrapper">
+        <input type="text" placeholder="Tìm bài học..." class="search-box" id="searchBox" />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <ul class="lesson-list" id="lessonList">
+        <li><a href="bai01cs.html">01. C# là gì</a></li>
+        <li><a href="bai02cs.html">02. Cấu trúc lệnh cơ bản</a></li>
+        <li><a href="bai03cs.html">03. Nhập xuất cơ bản</a></li>
+        <li><a href="bai04cs.html">04. Biến trong C#</a></li>
+        <li class="active"><a href="bai05cs.html">05. Kiểu dữ liệu trong C#</a></li>
+        <li><a href="bai06cs.html">06. Toán tử trong C#</a></li>
+        <li><a href="bai07cs.html">07. Hằng</a></li>
+        <li><a href="bai08cs.html">08. Ép kiểu trong C#</a></li>
+        <li><a href="bai09cs.html">09. If else trong C#</a></li>
+        <li><a href="bai10cs.html">10. Switch case trong C#</a></li>
+        <li><a href="bai11cs.html">11. Kiểu dữ liệu object và từ khóa var</a></li>
+        <li><a href="bai12cs.html">12. Kiểu dữ liệu dynamic</a></li>
+        <li><a href="bai13cs.html">13. Giới thiệu cấu trúc lặp</a></li>
+        <li><a href="bai14cs.html">14. Goto</a></li>
+        <li><a href="bai15cs.html">15. Vòng lặp For</a></li>
+        <li><a href="bai16cs.html">16. Vòng lặp while</a></li>
+        <li><a href="bai17cs.html">17. Vòng lặp do-while</a></li>
+        <li><a href="bai18cs.html">18. Cấu trúc của hàm cơ bản</a></li>
+        <li><a href="bai19cs.html">19. Biến toàn cục và biến cục bộ</a></li>
+        <li><a href="bai20cs.html">20. Từ khóa ref và out</a></li>
+        <li><a href="bai21cs.html">21. Mảng 1 chiều</a></li>
+        <li><a href="bai22cs.html">22. Mảng 2 chiều trong C#</a></li>
+        <li><a href="bai23cs.html">23. Mảng nhiều chiều trong C#</a></li>
+        <li><a href="bai24cs.html">24. Vòng lặp foreach trong C#</a></li>
+        <li><a href="bai25cs.html">25. Lớp String trong C#</a></li>
+        <li><a href="bai26cs.html">26. Struct trong C#</a></li>
+        <li><a href="bai27cs.html">27. enum trong C#</a></li>
+        <li><a href="bai28cs.html">28. Regular Expression trong C#</a></li>
+      </ul>
+      <div class="no-results" id="noResults">Không tìm thấy bài học phù hợp</div>
+    </aside>
+
+    <section class="content">
+      <div class="video-wrapper">
+        <iframe 
+          width="1000" 
+          height="700" 
+          src="https://www.youtube.com/embed/yrH7Qe8FXqE?si=vq7H3RkLS3aF3vkI" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+
+</body>
+</html>
+      </ul>
+      <div class="no-results" id="noResults">Không tìm thấy bài học phù hợp</div>
+    </aside>
+
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchBox = document.getElementById('searchBox');
+      const lessonList = document.getElementById('lessonList');
+      const lessons = lessonList.getElementsByTagName('li');
+      const noResults = document.getElementById('noResults');
+
+      searchBox.addEventListener('input', function() {
+        const searchTerm = this.value.trim().toLowerCase();
+        let hasResults = false;
+        
+        // Lặp qua tất cả các bài học
+        for (let i = 0; i < lessons.length; i++) {
+          const lesson = lessons[i];
+          const lessonText = lesson.textContent.toLowerCase();
+          
+          // Kiểm tra nếu bài học chứa từ khóa tìm kiếm
+          if (lessonText.includes(searchTerm)) {
+            lesson.classList.remove('hidden');
+            lesson.classList.add('highlight');
+            hasResults = true;
+          } else {
+            lesson.classList.add('hidden');
+            lesson.classList.remove('highlight');
+          }
+        }
+        
+        // Hiển thị thông báo nếu không có kết quả
+        if (hasResults || searchTerm === '') {
+          noResults.style.display = 'none';
+        } else {
+          noResults.style.display = 'block';
+        }
+        
+        // Highlight từ khóa tìm kiếm trong kết quả
+        if (searchTerm !== '') {
+          const regex = new RegExp(searchTerm, 'gi');
+          for (let i = 0; i < lessons.length; i++) {
+            const lesson = lessons[i];
+            if (!lesson.classList.contains('hidden')) {
+              const lessonLink = lesson.querySelector('a');
+              const originalText = lessonLink.dataset.originalText || lessonLink.innerHTML;
+              lessonLink.dataset.originalText = originalText;
+              lessonLink.innerHTML = originalText.replace(regex, match => 
+                `<span style="background-color: #4d90fe; color: white; padding: 2px 4px; border-radius: 4px;">${match}</span>`
+              );
+            }
+          }
+        } else {
+          // Khôi phục nội dung gốc khi không có từ khóa tìm kiếm
+          for (let i = 0; i < lessons.length; i++) {
+            const lesson = lessons[i];
+            const lessonLink = lesson.querySelector('a');
+            if (lessonLink.dataset.originalText) {
+              lessonLink.innerHTML = lessonLink.dataset.originalText;
+            }
+          }
+        }
+      });
+      
+      // Xử lý khi nhấn phím Esc để xóa tìm kiếm
+      searchBox.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          this.value = '';
+          const event = new Event('input');
+          this.dispatchEvent(event);
+          this.blur();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

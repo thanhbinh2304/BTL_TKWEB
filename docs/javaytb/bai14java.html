@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Java cơ bản</title>
+  <link rel="stylesheet" href="../css/ytb.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <header class="header">
+    <div class="header-left">
+      <!-- Logo ở góc trái, click để về trang chủ -->
+      <a href="../index2.html" class="logo"><img src="../img/logo.jpg" alt="Simple Learning"></a>
+    </div>
+    <div class="header-center">
+      <!-- Tiêu đề khóa học ở giữa -->
+      <h1>Khóa học lập trình Html&Css cơ bản</h1>
+    </div>
+    <div class="header-right">
+      <!-- Nút quay lại ở góc phải, click về trang thông tin khóa học -->
+      <a href="../java-detail.html" class="back-button">Quay lại</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <h2><i class="fas fa-list"></i> Danh sách bài giảng</h2>
+      <div class="search-box-wrapper">
+        <input type="text" placeholder="Tìm bài học..." class="search-box" id="searchBox" />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <ul class="lesson-list" id="lessonList">
+        <li><a href="bai01java.html">01. Lịch sử phát triển và tính năng của Java</a></li>
+        <li><a href="bai02java.html">02. Cài đặt môi trường Java</a></li>
+        <li><a href="bai03java.html">03. Viết chương trình Java đầu tiên</a></li>
+        <li><a href="bai04java.html">04. Các biến trong Java</a></li>
+        <li><a href="bai05java.html">05. Các kiểu dữ liệu trong Java</a></li>
+        <li><a href="bai06java.html">06. Các toán tử trong Java</a></li>
+        <li><a href="bai07java.html">07. Hằng trong Java</a></li>
+        <li><a href="bai08java.html">08. Ép kiểu trong Java</a></li>
+        <li><a href="bai09java.html">09. Cấu trúc rẽ nhánh trong Java</a></li>
+        <li><a href="bai10java.html">10. Vòng lặp while trong Java</a></li>
+        <li><a href="bai11java.html">11. Vòng lặp for trong Java</a></li>
+        <li><a href="bai12java.html">12. Mảng trong Java</a></li>
+        <li><a href="bai13java.html">13. Vòng lặp for-each trong Java</a></li>
+        <li class="active"><a href="bai14java.html">14. Vai trò break, continue trong Java</a></li>
+        <li><a href="bai15java.html">15. Switch trong Java</a></li>
+      </ul>
+      <div class="no-results" id="noResults">Không tìm thấy bài học phù hợp</div>
+    </aside>
+
+    <section class="content">
+      <div class="video-wrapper">
+        <iframe 
+          width="1000" 
+          height="700" 
+          src="https://www.youtube.com/embed/DrFwmhHqiA8?si=9Zl7zQluYR1s9dgR" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchBox = document.getElementById('searchBox');
+      const lessonList = document.getElementById('lessonList');
+      const lessons = lessonList.getElementsByTagName('li');
+      const noResults = document.getElementById('noResults');
+
+      searchBox.addEventListener('input', function() {
+        const searchTerm = this.value.trim().toLowerCase();
+        let hasResults = false;
+        
+        // Lặp qua tất cả các bài học
+        for (let i = 0; i < lessons.length; i++) {
+          const lesson = lessons[i];
+          const lessonText = lesson.textContent.toLowerCase();
+          
+          // Kiểm tra nếu bài học chứa từ khóa tìm kiếm
+          if (lessonText.includes(searchTerm)) {
+            lesson.classList.remove('hidden');
+            lesson.classList.add('highlight');
+            hasResults = true;
+          } else {
+            lesson.classList.add('hidden');
+            lesson.classList.remove('highlight');
+          }
+        }
+        
+        // Hiển thị thông báo nếu không có kết quả
+        if (hasResults || searchTerm === '') {
+          noResults.style.display = 'none';
+        } else {
+          noResults.style.display = 'block';
+        }
+        
+        // Highlight từ khóa tìm kiếm trong kết quả
+        if (searchTerm !== '') {
+          const regex = new RegExp(searchTerm, 'gi');
+          for (let i = 0; i < lessons.length; i++) {
+            const lesson = lessons[i];
+            if (!lesson.classList.contains('hidden')) {
+              const lessonLink = lesson.querySelector('a');
+              const originalText = lessonLink.dataset.originalText || lessonLink.innerHTML;
+              lessonLink.dataset.originalText = originalText;
+              lessonLink.innerHTML = originalText.replace(regex, match => 
+                `<span style="background-color: #4d90fe; color: white; padding: 2px 4px; border-radius: 4px;">${match}</span>`
+              );
+            }
+          }
+        } else {
+          // Khôi phục nội dung gốc khi không có từ khóa tìm kiếm
+          for (let i = 0; i < lessons.length; i++) {
+            const lesson = lessons[i];
+            const lessonLink = lesson.querySelector('a');
+            if (lessonLink.dataset.originalText) {
+              lessonLink.innerHTML = lessonLink.dataset.originalText;
+            }
+          }
+        }
+      });
+      
+      // Xử lý khi nhấn phím Esc để xóa tìm kiếm
+      searchBox.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          this.value = '';
+          const event = new Event('input');
+          this.dispatchEvent(event);
+          this.blur();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

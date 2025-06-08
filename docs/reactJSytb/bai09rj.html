@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReactJS cơ bản</title>
+  <link rel="stylesheet" href="../css/ytb.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <header class="header">
+    <div class="header-left">
+      <!-- Logo ở góc trái, click để về trang chủ -->
+      <a href="../index2.html" class="logo"><img src="../img/logo.jpg" alt="Simple Learning"></a>
+    </div>
+    <div class="header-center">
+      <!-- Tiêu đề khóa học ở giữa -->
+      <h1>Khóa học lập trình Html&Css cơ bản</h1>
+    </div>
+    <div class="header-right">
+      <!-- Nút quay lại ở góc phải, click về trang thông tin khóa học -->
+      <a href="../reactJS-detail.html" class="back-button">Quay lại</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <h2><i class="fas fa-list"></i> Danh sách bài giảng</h2>
+      <div class="search-box-wrapper">
+        <input type="text" placeholder="Tìm bài học..." class="search-box" id="searchBox" />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <ul class="lesson-list" id="lessonList">
+        <li><a href="bai01rj.html">01. React JS là gì? Học React từ cơ bản đến nâng cao cho người mới</a></li>
+        <li><a href="bai02rj.html">02. JavaScript ES6 - Modules Tìm hiểu Named Export, Default Export</a></li>
+        <li><a href="bai03rj.html">03. Hướng Dẫn Tạo Dự Án React CodeSandbox vs Local Project using VScode</a></li>
+        <li><a href="bai04rj.html">04. JS Function Review: Nhìn lại kiến thức cơ bản về Function trong JavaScript</a></li>
+        <li><a href="bai05rj.html">05. JS Function Review: Arrow Function - Những điều bạn cần biết</a></li>
+        <li><a href="bai06rj.html">06. JS OOP Review: Ôn tập, làm chủ Objects và Classes JavaScript nhanh chóng</a></li>
+        <li><a href="bai07rj.html">07. JS Array Review: Ôn tập, review array JavaScript , những điểm cần lưu ý</a></li>
+        <li><a href="bai08rj.html">08. Destructuring JavaScript - Cách sử dụng Destructuring Arrays và Objects</a></li>
+        <li class="active"><a href="bai09rj.html">09. Destructuring function - Ứng dụng Destructuring với đối tượng trong hàm JavaScript</a></li>
+        <li><a href="bai10rj.html">10. Review Javascript Spread Operator - Làm việc với mảng và object trong JSbằng Spread Operator</a></li>
+      </ul>
+      <div class="no-results" id="noResults">Không tìm thấy bài học phù hợp</div>
+    </aside>
+
+    <section class="content">
+      <div class="video-wrapper">
+        <iframe 
+          width="1000" 
+          height="700" 
+          src="https://www.youtube.com/embed/r0Iifpmi0sE?si=MFPjVsIm7AzdJcCl" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+
+</body>
+</html>
+      </ul>
+      <div class="no-results" id="noResults">Không tìm thấy bài học phù hợp</div>
+    </aside>
+
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchBox = document.getElementById('searchBox');
+      const lessonList = document.getElementById('lessonList');
+      const lessons = lessonList.getElementsByTagName('li');
+      const noResults = document.getElementById('noResults');
+
+      searchBox.addEventListener('input', function() {
+        const searchTerm = this.value.trim().toLowerCase();
+        let hasResults = false;
+        
+        // Lặp qua tất cả các bài học
+        for (let i = 0; i < lessons.length; i++) {
+          const lesson = lessons[i];
+          const lessonText = lesson.textContent.toLowerCase();
+          
+          // Kiểm tra nếu bài học chứa từ khóa tìm kiếm
+          if (lessonText.includes(searchTerm)) {
+            lesson.classList.remove('hidden');
+            lesson.classList.add('highlight');
+            hasResults = true;
+          } else {
+            lesson.classList.add('hidden');
+            lesson.classList.remove('highlight');
+          }
+        }
+        
+        // Hiển thị thông báo nếu không có kết quả
+        if (hasResults || searchTerm === '') {
+          noResults.style.display = 'none';
+        } else {
+          noResults.style.display = 'block';
+        }
+        
+        // Highlight từ khóa tìm kiếm trong kết quả
+        if (searchTerm !== '') {
+          const regex = new RegExp(searchTerm, 'gi');
+          for (let i = 0; i < lessons.length; i++) {
+            const lesson = lessons[i];
+            if (!lesson.classList.contains('hidden')) {
+              const lessonLink = lesson.querySelector('a');
+              const originalText = lessonLink.dataset.originalText || lessonLink.innerHTML;
+              lessonLink.dataset.originalText = originalText;
+              lessonLink.innerHTML = originalText.replace(regex, match => 
+                `<span style="background-color: #4d90fe; color: white; padding: 2px 4px; border-radius: 4px;">${match}</span>`
+              );
+            }
+          }
+        } else {
+          // Khôi phục nội dung gốc khi không có từ khóa tìm kiếm
+          for (let i = 0; i < lessons.length; i++) {
+            const lesson = lessons[i];
+            const lessonLink = lesson.querySelector('a');
+            if (lessonLink.dataset.originalText) {
+              lessonLink.innerHTML = lessonLink.dataset.originalText;
+            }
+          }
+        }
+      });
+      
+      // Xử lý khi nhấn phím Esc để xóa tìm kiếm
+      searchBox.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          this.value = '';
+          const event = new Event('input');
+          this.dispatchEvent(event);
+          this.blur();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
