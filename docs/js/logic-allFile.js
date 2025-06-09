@@ -67,7 +67,7 @@
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: '../vendors/icons8-github.json'
+            path: 'img/icons8-github.json'
         });
         githubAnim.addEventListener('DOMLoaded', function() {
             // Đổi màu stroke của tất cả path trong SVG sang trắng
