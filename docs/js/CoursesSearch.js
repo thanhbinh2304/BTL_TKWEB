@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     suggestionBox.style.maxHeight = '220px';
     suggestionBox.style.overflowY = 'auto';
     suggestionBox.style.fontSize = '1rem';
+
     function updateSuggestionBoxPosition() {
         var rect = searchInput.getBoundingClientRect();
         var parentRect = searchInput.parentElement.getBoundingClientRect();
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         suggestionBox.style.top = (rect.bottom - parentRect.top + 4) + 'px';
         suggestionBox.style.width = rect.width + 'px';
     }
+
     updateSuggestionBoxPosition();
     window.addEventListener('resize', updateSuggestionBoxPosition);
     searchInput.addEventListener('input', updateSuggestionBoxPosition);
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return JSON.parse(localStorage.getItem(getUserRecentKey())) || [];
         } catch { return []; }
     }
+    
     function saveRecentSearch(keyword) {
         if (!keyword) return;
         var recent = getRecentSearches();

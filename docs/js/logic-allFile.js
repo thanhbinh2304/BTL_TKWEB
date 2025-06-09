@@ -69,6 +69,7 @@
             autoplay: true,
             path: 'img/icons8-github.json'
         });
+        
         githubAnim.addEventListener('DOMLoaded', function() {
             // Đổi màu stroke của tất cả path trong SVG sang trắng
             var svg = document.querySelector('#github-lottie svg');
